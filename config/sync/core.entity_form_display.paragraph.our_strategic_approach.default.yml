@@ -1,0 +1,35 @@
+uuid: 1e99cddb-6584-4455-96a2-9ac1f9848d39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_strategic_approach.field_startegic_approach
+    - field.field.paragraph.our_strategic_approach.field_startegic_approach_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.our_strategic_approach
+  module:
+    - svg_image
+id: paragraph.our_strategic_approach.default
+targetEntityType: paragraph
+bundle: our_strategic_approach
+mode: default
+content:
+  field_startegic_approach:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_startegic_approach_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

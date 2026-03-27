@@ -1,0 +1,22 @@
+uuid: d9ae7a89-dbaf-476a-8e4e-76643cfcd37a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artic
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: artic_breadcrumbs
+theme: artic
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

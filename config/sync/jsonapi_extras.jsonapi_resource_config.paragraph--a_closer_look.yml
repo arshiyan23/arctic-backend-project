@@ -1,0 +1,130 @@
+uuid: a95b4c42-4400-48ae-9a99-e27ce91767ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.a_closer_look
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: paragraph--a_closer_look
+disabled: false
+path: paragraph/a_closer_look
+resourceType: paragraph--a_closer_look
+resourceFields:
+  id:
+    disabled: true
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: true
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  parent_id:
+    disabled: true
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+  parent_type:
+    disabled: true
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+  parent_field_name:
+    disabled: true
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+  behavior_settings:
+    disabled: true
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_a_closer_look_lists:
+    disabled: false
+    fieldName: field_a_closer_look_lists
+    publicName: field_a_closer_look_lists
+    enhancer:
+      id: ''
+  field_big_image:
+    disabled: false
+    fieldName: field_big_image
+    publicName: field_big_image
+    enhancer:
+      id: ''
+  field_no_of_regions:
+    disabled: false
+    fieldName: field_no_of_regions
+    publicName: field_no_of_regions
+    enhancer:
+      id: ''
+  field_regions_title:
+    disabled: false
+    fieldName: field_regions_title
+    publicName: field_regions_title
+    enhancer:
+      id: ''
+  field_small_image:
+    disabled: false
+    fieldName: field_small_image
+    publicName: field_small_image
+    enhancer:
+      id: ''

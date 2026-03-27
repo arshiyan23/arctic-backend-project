@@ -1,0 +1,19 @@
+uuid: 21c457b7-b3a0-4118-9124-844e301d164e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_description
+    - paragraphs.paragraphs_type.icon_title_description
+id: paragraph.icon_title_description.field_hwd_description
+field_name: field_hwd_description
+entity_type: paragraph
+bundle: icon_title_description
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

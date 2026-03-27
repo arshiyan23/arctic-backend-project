@@ -1,0 +1,9 @@
+uuid: 748dbb5d-fc4f-485f-b62e-0d3f3894d556
+langcode: en
+status: true
+dependencies: {  }
+id: jsonapi_search_api_facets__artic_index_database
+name: 'jsonapi_search_api_facets:artic_index_database'
+filter_key: filter
+url_processor: json_api
+breadcrumb: {  }

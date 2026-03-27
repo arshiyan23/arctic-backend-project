@@ -1,0 +1,8 @@
+uuid: 829e481f-7320-47f3-b089-4af2888d08ff
+langcode: en
+status: true
+dependencies: {  }
+id: supply_chain
+label: 'Supply Chain'
+revision: 0
+description: 'used to add supply chain '

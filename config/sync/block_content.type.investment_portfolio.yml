@@ -1,0 +1,8 @@
+uuid: 46724bb5-305a-416b-b1e3-cdc71c9df1dd
+langcode: en
+status: true
+dependencies: {  }
+id: investment_portfolio
+label: 'Investment portfolio'
+revision: 0
+description: 'Add the Investment portfolio list'

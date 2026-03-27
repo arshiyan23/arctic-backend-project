@@ -1,0 +1,23 @@
+uuid: 1d633cf1-eb17-43b5-af42-3309cd276e2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number
+    - paragraphs.paragraphs_type.counters
+id: paragraph.counters.field_number
+field_name: field_number
+entity_type: paragraph
+bundle: counters
+label: 'Number (Eg: 20)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

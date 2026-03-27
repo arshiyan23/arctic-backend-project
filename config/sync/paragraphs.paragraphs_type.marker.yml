@@ -1,0 +1,10 @@
+uuid: 4eca9307-ac5b-4e14-92b7-0822938a36bf
+langcode: en
+status: true
+dependencies: {  }
+id: marker
+label: Marker
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

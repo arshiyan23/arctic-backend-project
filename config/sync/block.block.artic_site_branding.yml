@@ -1,0 +1,25 @@
+uuid: b3512446-5cea-4e75-abcf-dbc89070aebe
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artic
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: artic_site_branding
+theme: artic
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

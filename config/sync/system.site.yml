@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 03ac960d-8cf8-4448-bbc3-5580f4db8194
+name: 'Al Rayyan | Tourism Investment Co. (ARTIC)'
+mail: shiva.srikanth@royalcyber.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

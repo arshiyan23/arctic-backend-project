@@ -1,0 +1,24 @@
+uuid: 926e7f2e-2a9a-4d8d-bc35-737ccc795126
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.executive_management
+  module:
+    - text
+id: node.executive_management.body
+field_name: body
+entity_type: node
+bundle: executive_management
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

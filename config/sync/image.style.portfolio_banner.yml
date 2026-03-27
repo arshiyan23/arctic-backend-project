@@ -1,0 +1,21 @@
+uuid: 0bc5dc94-cef8-4963-a455-9f178448f00a
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_banner
+label: 'Portfolio Banner 1920x1080'
+effects:
+  76ed6cfe-8d5f-4538-a5c6-ce886fab3e42:
+    uuid: 76ed6cfe-8d5f-4538-a5c6-ce886fab3e42
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center
+  a2846764-0d9f-4fc1-96e3-9c91fab8966c:
+    uuid: a2846764-0d9f-4fc1-96e3-9c91fab8966c
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

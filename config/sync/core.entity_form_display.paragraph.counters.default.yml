@@ -1,0 +1,49 @@
+uuid: 692c2667-80e7-4e53-ba63-33d6ae2217c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.counters.field_currency_symbol
+    - field.field.paragraph.counters.field_magnitude_indicator
+    - field.field.paragraph.counters.field_number
+    - field.field.paragraph.counters.field_number_text
+    - paragraphs.paragraphs_type.counters
+id: paragraph.counters.default
+targetEntityType: paragraph
+bundle: counters
+mode: default
+content:
+  field_currency_symbol:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_magnitude_indicator:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_number:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_number_text:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

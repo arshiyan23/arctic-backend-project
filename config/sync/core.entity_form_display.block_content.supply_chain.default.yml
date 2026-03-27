@@ -1,0 +1,58 @@
+uuid: a56bc0d2-5a82-44ad-9305-17a62eeb2fec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.supply_chain
+    - field.field.block_content.supply_chain.body
+    - field.field.block_content.supply_chain.field_supply_image
+    - field.field.block_content.supply_chain.field_supply_title
+  module:
+    - content_moderation
+    - media_library
+    - text
+id: block_content.supply_chain.default
+targetEntityType: block_content
+bundle: supply_chain
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 101
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_supply_image:
+    type: media_library_widget
+    weight: 103
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_supply_title:
+    type: string_textfield
+    weight: 102
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

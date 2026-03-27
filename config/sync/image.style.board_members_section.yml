@@ -1,0 +1,21 @@
+uuid: 480e9101-4b67-4630-8301-fd72e119da31
+langcode: en
+status: true
+dependencies: {  }
+name: board_members_section
+label: 'Board members section 438×479'
+effects:
+  50f37071-1f20-40b9-802e-128187030d7b:
+    uuid: 50f37071-1f20-40b9-802e-128187030d7b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 438
+      height: 479
+      anchor: center-top
+  9434f745-7706-443c-9620-1e6f13035438:
+    uuid: 9434f745-7706-443c-9620-1e6f13035438
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

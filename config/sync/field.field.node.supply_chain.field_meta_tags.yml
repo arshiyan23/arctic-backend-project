@@ -1,0 +1,21 @@
+uuid: b33ddfe4-9a66-45b4-9933-017b0fddfd64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.supply_chain
+  module:
+    - metatag
+id: node.supply_chain.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: supply_chain
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

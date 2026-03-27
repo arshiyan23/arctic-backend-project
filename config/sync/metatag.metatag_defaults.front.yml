@@ -1,0 +1,9 @@
+uuid: cabd8a2a-888c-4b25-ac3c-1bd4f7bfebe8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags: {  }

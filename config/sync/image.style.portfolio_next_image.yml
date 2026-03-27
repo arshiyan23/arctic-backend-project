@@ -1,0 +1,21 @@
+uuid: be0df1a1-204e-49ac-ae30-ea6dd166c9a4
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_next_image
+label: 'Portfolio Next Image'
+effects:
+  9f33a072-cff9-4be0-b638-c6ba83bcaf2f:
+    uuid: 9f33a072-cff9-4be0-b638-c6ba83bcaf2f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 560
+      height: 680
+      anchor: center-center
+  42c22bb4-71e0-4d22-bab1-e5d69614aafc:
+    uuid: 42c22bb4-71e0-4d22-bab1-e5d69614aafc
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

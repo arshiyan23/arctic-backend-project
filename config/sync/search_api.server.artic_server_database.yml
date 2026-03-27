@@ -1,0 +1,15 @@
+uuid: 461fbd89-d578-43b4-bf63-be9fcbb79ecc
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: artic_server_database
+name: 'Artic Server Database'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: partial
+  phrase: bigram

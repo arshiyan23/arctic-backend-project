@@ -1,0 +1,58 @@
+uuid: 637e0daa-b895-4be7-a9fc-670453fba096
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a_closer_look.field_a_closer_look_lists
+    - field.field.paragraph.a_closer_look.field_big_image
+    - field.field.paragraph.a_closer_look.field_no_of_regions
+    - field.field.paragraph.a_closer_look.field_regions_title
+    - field.field.paragraph.a_closer_look.field_small_image
+    - paragraphs.paragraphs_type.a_closer_look
+  module:
+    - media_library
+id: paragraph.a_closer_look.default
+targetEntityType: paragraph
+bundle: a_closer_look
+mode: default
+content:
+  field_a_closer_look_lists:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_big_image:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_no_of_regions:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_regions_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_small_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

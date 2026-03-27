@@ -1,0 +1,31 @@
+uuid: 4b8a06de-1367-483a-927f-90dd4f127694
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo
+    - field.storage.block_content.field_mobile_logo
+    - media.type.image
+    - media.type.svg
+id: block_content.logo.field_mobile_logo
+field_name: field_mobile_logo
+entity_type: block_content
+bundle: logo
+label: 'Mobile Logo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      svg: svg
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

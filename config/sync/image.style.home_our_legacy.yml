@@ -1,0 +1,21 @@
+uuid: 0f4d88e6-d09c-4a27-90b9-1b06083f1b60
+langcode: en
+status: true
+dependencies: {  }
+name: home_our_legacy
+label: 'Home Our Legacy 700×801'
+effects:
+  1759fea7-2683-4309-be41-c73178a68df8:
+    uuid: 1759fea7-2683-4309-be41-c73178a68df8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 801
+      anchor: center-top
+  c992a52d-7c10-43d3-860d-3c49d4df9f7f:
+    uuid: c992a52d-7c10-43d3-860d-3c49d4df9f7f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

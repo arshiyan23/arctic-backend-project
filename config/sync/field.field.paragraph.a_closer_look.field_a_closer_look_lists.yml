@@ -1,0 +1,19 @@
+uuid: 40f685e0-fdec-43fb-a495-c667d38cce94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_a_closer_look_lists
+    - paragraphs.paragraphs_type.a_closer_look
+id: paragraph.a_closer_look.field_a_closer_look_lists
+field_name: field_a_closer_look_lists
+entity_type: paragraph
+bundle: a_closer_look
+label: 'A Closer Look Lists'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

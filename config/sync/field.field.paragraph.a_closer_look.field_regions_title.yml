@@ -1,0 +1,19 @@
+uuid: e4669263-a902-4084-be43-abe5f792e413
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_regions_title
+    - paragraphs.paragraphs_type.a_closer_look
+id: paragraph.a_closer_look.field_regions_title
+field_name: field_regions_title
+entity_type: paragraph
+bundle: a_closer_look
+label: 'Regions Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

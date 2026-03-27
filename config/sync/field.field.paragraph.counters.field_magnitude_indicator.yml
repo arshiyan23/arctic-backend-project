@@ -1,0 +1,19 @@
+uuid: 59b96fdc-a880-4de7-a5a2-a0f10dd30f95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_magnitude_indicator
+    - paragraphs.paragraphs_type.counters
+id: paragraph.counters.field_magnitude_indicator
+field_name: field_magnitude_indicator
+entity_type: paragraph
+bundle: counters
+label: 'Magnitude Indicator (Eg: bn)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

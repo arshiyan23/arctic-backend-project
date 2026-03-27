@@ -1,0 +1,18 @@
+uuid: e9132a7e-af26-49f0-b8fd-77779c761cc4
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_is_mena
+field_name: field_is_mena
+entity_type: taxonomy_term
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

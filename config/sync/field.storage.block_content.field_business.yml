@@ -1,0 +1,18 @@
+uuid: b55069de-5b0b-4cbb-801d-77a4bf630518
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_business
+field_name: field_business
+entity_type: block_content
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

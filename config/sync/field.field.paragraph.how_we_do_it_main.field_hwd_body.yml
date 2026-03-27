@@ -1,0 +1,24 @@
+uuid: b181f906-94fb-4643-b87b-f13f4debf39d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_body
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.how_we_do_it_main
+  module:
+    - text
+id: paragraph.how_we_do_it_main.field_hwd_body
+field_name: field_hwd_body
+entity_type: paragraph
+bundle: how_we_do_it_main
+label: Body
+description: 'Use this body field if the description contains multiple paragraphs Or else use Description 1 Field.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

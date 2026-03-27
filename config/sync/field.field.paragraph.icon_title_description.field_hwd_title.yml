@@ -1,0 +1,19 @@
+uuid: 3ce4c420-8ffc-4a75-a0ca-cc6aa7eea9d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_title
+    - paragraphs.paragraphs_type.icon_title_description
+id: paragraph.icon_title_description.field_hwd_title
+field_name: field_hwd_title
+entity_type: paragraph
+bundle: icon_title_description
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

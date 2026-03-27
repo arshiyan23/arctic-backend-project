@@ -1,0 +1,7 @@
+# search_logger.services.yml
+services:
+  search_logger.search_logger_subscriber:
+    class: Drupal\search_logger\EventSubscriber\SearchLoggerSubscriber
+    arguments: ['@logger.factory']
+    tags:
+      - { name: event_subscriber }

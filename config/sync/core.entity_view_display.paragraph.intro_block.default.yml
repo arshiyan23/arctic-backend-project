@@ -1,0 +1,44 @@
+uuid: d9c6ac65-dc68-4ea5-8de8-273132626c43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.intro_block.field_cta
+    - field.field.paragraph.intro_block.field_description
+    - field.field.paragraph.intro_block.field_title
+    - paragraphs.paragraphs_type.intro_block
+  module:
+    - link
+id: paragraph.intro_block.default
+targetEntityType: paragraph
+bundle: intro_block
+mode: default
+content:
+  field_cta:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

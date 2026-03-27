@@ -1,0 +1,24 @@
+uuid: 99062c7d-63a7-4b7a-a6bd-1f24145b43e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.details_of_achievements.field_data_details
+    - paragraphs.paragraphs_type.details_of_achievements
+  module:
+    - entity_reference_revisions
+id: paragraph.details_of_achievements.default
+targetEntityType: paragraph
+bundle: details_of_achievements
+mode: default
+content:
+  field_data_details:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

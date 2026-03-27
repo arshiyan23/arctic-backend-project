@@ -1,0 +1,31 @@
+uuid: c2df6985-bcfb-4987-aa49-ae357556796f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_description.field_about
+    - field.field.paragraph.title_description.field_description_aboutus
+    - paragraphs.paragraphs_type.title_description
+  module:
+    - text
+id: paragraph.title_description.default
+targetEntityType: paragraph
+bundle: title_description
+mode: default
+content:
+  field_about:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_description_aboutus:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

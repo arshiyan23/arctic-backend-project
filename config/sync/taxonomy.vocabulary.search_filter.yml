@@ -1,0 +1,8 @@
+uuid: a0762ab2-6377-4ad3-839a-1678111a890a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Search Filter'
+vid: search_filter
+description: ''
+weight: 0

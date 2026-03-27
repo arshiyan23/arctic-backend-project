@@ -1,0 +1,24 @@
+uuid: 8fd3b59b-e7db-424b-a0de-ea8c194816a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.supply_chain
+  module:
+    - text
+id: node.supply_chain.body
+field_name: body
+entity_type: node
+bundle: supply_chain
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

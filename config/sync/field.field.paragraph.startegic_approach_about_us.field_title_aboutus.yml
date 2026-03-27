@@ -1,0 +1,19 @@
+uuid: 7f10563d-c6b0-4bfb-9abd-553eaba191e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_aboutus
+    - paragraphs.paragraphs_type.startegic_approach_about_us
+id: paragraph.startegic_approach_about_us.field_title_aboutus
+field_name: field_title_aboutus
+entity_type: paragraph
+bundle: startegic_approach_about_us
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

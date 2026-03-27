@@ -1,0 +1,25 @@
+uuid: 21604eb6-ad45-4aec-b8e3-52f44346fc3f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_block:bb7bd219-f1c7-4bce-8fee-f8e2189de5c2'
+  module:
+    - block_content
+  theme:
+    - olivero
+id: olivero_office
+theme: olivero
+region: footer_bottom
+weight: -6
+provider: null
+plugin: 'block_content:bb7bd219-f1c7-4bce-8fee-f8e2189de5c2'
+settings:
+  id: 'block_content:bb7bd219-f1c7-4bce-8fee-f8e2189de5c2'
+  label: Office
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

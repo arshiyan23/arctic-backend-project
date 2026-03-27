@@ -1,0 +1,76 @@
+uuid: 7174ce24-0092-4bac-8929-8e34f4a56bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_policy_content
+    - paragraphs.paragraphs_type.policy_content
+    - paragraphs.paragraphs_type.title_description
+  module:
+    - entity_reference_revisions
+id: paragraph.policy_content.field_policy_content
+field_name: field_policy_content
+entity_type: paragraph
+bundle: policy_content
+label: 'Policy Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      title_description: title_description
+    negate: 0
+    target_bundles_drag_drop:
+      a_closer_look:
+        weight: 18
+        enabled: false
+      address_contact_us:
+        weight: 17
+        enabled: false
+      counters:
+        weight: 19
+        enabled: false
+      details_of_achievements:
+        weight: 20
+        enabled: false
+      how_we_do_it_main:
+        weight: 21
+        enabled: false
+      icon_title_description:
+        weight: 22
+        enabled: false
+      intro_block:
+        weight: 23
+        enabled: false
+      map_markers:
+        weight: 24
+        enabled: false
+      marker:
+        weight: 25
+        enabled: false
+      our_strategic_approach:
+        weight: 26
+        enabled: false
+      policy_content:
+        weight: 27
+        enabled: false
+      startegic_approach_about_us:
+        weight: 28
+        enabled: false
+      title_description:
+        weight: 29
+        enabled: true
+      title_description_image:
+        weight: 30
+        enabled: false
+      video_gallery:
+        weight: 31
+        enabled: false
+      video_section:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

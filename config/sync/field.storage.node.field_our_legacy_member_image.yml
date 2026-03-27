@@ -1,0 +1,20 @@
+uuid: 9603add8-5083-448d-a5ee-1b86a7769f91
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_our_legacy_member_image
+field_name: field_our_legacy_member_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

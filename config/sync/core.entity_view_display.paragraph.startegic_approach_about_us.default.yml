@@ -1,0 +1,42 @@
+uuid: 139f2898-c2ce-4e12-b948-87b7c580d55d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.startegic_approach_about_us.field_left_title_about
+    - field.field.paragraph.startegic_approach_about_us.field_startegic_approach_about
+    - field.field.paragraph.startegic_approach_about_us.field_title_aboutus
+    - paragraphs.paragraphs_type.startegic_approach_about_us
+  module:
+    - entity_reference_revisions
+id: paragraph.startegic_approach_about_us.default
+targetEntityType: paragraph
+bundle: startegic_approach_about_us
+mode: default
+content:
+  field_left_title_about:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_startegic_approach_about:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_aboutus:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

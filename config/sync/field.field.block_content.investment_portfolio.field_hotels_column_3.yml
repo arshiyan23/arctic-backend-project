@@ -1,0 +1,19 @@
+uuid: 49e3a5e2-198e-43db-9222-84ed48857968
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.investment_portfolio
+    - field.storage.block_content.field_hotels_column_3
+id: block_content.investment_portfolio.field_hotels_column_3
+field_name: field_hotels_column_3
+entity_type: block_content
+bundle: investment_portfolio
+label: 'Hotels Column 3'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

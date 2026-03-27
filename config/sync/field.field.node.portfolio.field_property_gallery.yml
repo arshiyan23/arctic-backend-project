@@ -1,0 +1,29 @@
+uuid: c56041b1-a39c-4089-bb53-6ce6ab30eaae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_gallery
+    - media.type.image
+    - node.type.portfolio
+id: node.portfolio.field_property_gallery
+field_name: field_property_gallery
+entity_type: node
+bundle: portfolio
+label: 'Property gallery'
+description: "Image 1 Minimum Size: 1760×1080 <br/>\r\nImage 2 Minimum Size: 870×707 <br/>\r\nImage 3 Minimum Size: 870×1080\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

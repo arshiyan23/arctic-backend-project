@@ -1,0 +1,20 @@
+uuid: adc69ec6-77b7-4432-8de3-b50543b2aa99
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_protfolio_country
+field_name: field_protfolio_country
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 7ada1ae9-0701-42bb-9ac3-f5e6b8bd8e4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.plp_download
+    - field.storage.block_content.field_plp_downloads
+    - media.type.document
+id: block_content.plp_download.field_plp_downloads
+field_name: field_plp_downloads
+entity_type: block_content
+bundle: plp_download
+label: 'PLP download'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

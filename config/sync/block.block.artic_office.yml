@@ -1,0 +1,21 @@
+uuid: b257d16e-6cb1-4775-9cd5-3bdec66cecd0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - artic
+id: artic_office
+theme: artic
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'block_content:bb7bd219-f1c7-4bce-8fee-f8e2189de5c2'
+settings:
+  id: 'block_content:bb7bd219-f1c7-4bce-8fee-f8e2189de5c2'
+  label: Office
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

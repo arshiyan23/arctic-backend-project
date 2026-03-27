@@ -1,0 +1,19 @@
+uuid: d89743f3-ea18-43ad-9cf6-a5d5b3d2a01c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_hwd_description_1
+field_name: field_hwd_description_1
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

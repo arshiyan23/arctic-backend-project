@@ -1,0 +1,8 @@
+uuid: ef29ff50-d41a-41c9-b8a3-7ce3ed6e3109
+langcode: en
+status: true
+dependencies: {  }
+name: 'Our Partners'
+vid: our_partners
+description: 'List of all partners'
+weight: 0

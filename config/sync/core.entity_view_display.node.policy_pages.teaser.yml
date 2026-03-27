@@ -1,0 +1,41 @@
+uuid: 344b1a8a-d16c-49b0-8510-8ce8d9b41fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.policy_pages.body
+    - field.field.node.policy_pages.field_content
+    - field.field.node.policy_pages.field_download
+    - field.field.node.policy_pages.field_download_english
+    - field.field.node.policy_pages.field_download_to_learn_more
+    - field.field.node.policy_pages.field_meta_tags
+    - node.type.policy_pages
+  module:
+    - text
+    - user
+id: node.policy_pages.teaser
+targetEntityType: node
+bundle: policy_pages
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_content: true
+  field_download: true
+  field_download_english: true
+  field_download_to_learn_more: true
+  field_meta_tags: true
+  search_api_excerpt: true

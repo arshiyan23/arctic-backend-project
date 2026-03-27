@@ -1,0 +1,21 @@
+uuid: 4e458609-d7c7-4be1-8ba1-9b47ba6c1122
+langcode: en
+status: true
+dependencies: {  }
+name: map_image
+label: 'Map Image'
+effects:
+  88870f4b-bb5a-4888-98fc-d6df52911c0f:
+    uuid: 88870f4b-bb5a-4888-98fc-d6df52911c0f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 406
+      anchor: center-top
+  85a0bba3-b8d6-4529-bb93-2081b1610874:
+    uuid: 85a0bba3-b8d6-4529-bb93-2081b1610874
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

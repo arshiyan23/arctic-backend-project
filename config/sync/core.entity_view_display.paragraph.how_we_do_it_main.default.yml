@@ -1,0 +1,77 @@
+uuid: a63e55fe-6986-4c93-af0b-1fe6eff22316
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.how_we_do_it_main.field_hwd_body
+    - field.field.paragraph.how_we_do_it_main.field_hwd_description_1
+    - field.field.paragraph.how_we_do_it_main.field_hwd_description_2
+    - field.field.paragraph.how_we_do_it_main.field_hwd_download
+    - field.field.paragraph.how_we_do_it_main.field_hwd_main_title
+    - field.field.paragraph.how_we_do_it_main.field_icon_text_main
+    - field.field.paragraph.how_we_do_it_main.field_left_title
+    - paragraphs.paragraphs_type.how_we_do_it_main
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.how_we_do_it_main.default
+targetEntityType: paragraph
+bundle: how_we_do_it_main
+mode: default
+content:
+  field_hwd_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_hwd_description_1:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hwd_description_2:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hwd_download:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hwd_main_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon_text_main:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_left_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden: {  }

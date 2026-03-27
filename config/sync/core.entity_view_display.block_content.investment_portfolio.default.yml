@@ -1,0 +1,70 @@
+uuid: 3f68cf51-e4af-4991-b392-9094ed214016
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.investment_portfolio
+    - field.field.block_content.investment_portfolio.body
+    - field.field.block_content.investment_portfolio.field_hotels_column_1
+    - field.field.block_content.investment_portfolio.field_hotels_column_2
+    - field.field.block_content.investment_portfolio.field_hotels_column_3
+    - field.field.block_content.investment_portfolio.field_residential_column_1
+    - field.field.block_content.investment_portfolio.field_retail_column_1
+    - field.field.block_content.investment_portfolio.field_services_column_1
+    - field.field.block_content.investment_portfolio.field_summary_of_hotel_rooms
+id: block_content.investment_portfolio.default
+targetEntityType: block_content
+bundle: investment_portfolio
+mode: default
+content:
+  field_hotels_column_1:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hotels_column_2:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hotels_column_3:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_residential_column_1:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_retail_column_1:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_services_column_1:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_summary_of_hotel_rooms:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  body: true

@@ -1,0 +1,21 @@
+uuid: b3aa7329-d43d-4361-80a6-26ad9814cadb
+langcode: en
+status: true
+dependencies: {  }
+name: a_closer_look_1
+label: 'A Closer Look 1 556×362'
+effects:
+  790a680e-15ad-49af-9492-123f09e82ab9:
+    uuid: 790a680e-15ad-49af-9492-123f09e82ab9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 556
+      height: 362
+      anchor: center-center
+  068d9f70-9ac5-45dd-b8ea-0404bd961994:
+    uuid: 068d9f70-9ac5-45dd-b8ea-0404bd961994
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,0 +1,20 @@
+uuid: 11093ac4-f6e5-4651-b2c8-6214162d52c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_property_gallery
+field_name: field_property_gallery
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

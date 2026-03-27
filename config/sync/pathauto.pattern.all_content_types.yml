@@ -1,0 +1,31 @@
+uuid: 0487087b-319f-4ad6-9273-10e3728448af
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: all_content_types
+label: 'All Content Types'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  914a6a14-376b-407d-a0ce-655087ccf3c9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 914a6a14-376b-407d-a0ce-655087ccf3c9
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      board_members: board_members
+      executive_management: executive_management
+      landing_page: landing_page
+      news: news
+      page: page
+      policy_pages: policy_pages
+      portfolio: portfolio
+      press_release: press_release
+      supply_chain: supply_chain
+selection_logic: and
+weight: -5
+relationships: {  }

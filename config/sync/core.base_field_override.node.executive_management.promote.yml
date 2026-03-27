@@ -1,0 +1,22 @@
+uuid: e195ef01-8f82-4fce-9a10-c7a52e5ce9df
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.executive_management
+id: node.executive_management.promote
+field_name: promote
+entity_type: node
+bundle: executive_management
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

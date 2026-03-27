@@ -1,0 +1,29 @@
+uuid: af3b14d8-4523-4a1c-a39b-a41ed0fc41d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download_english
+    - media.type.document
+    - node.type.portfolio
+id: node.portfolio.field_download_english
+field_name: field_download_english
+entity_type: node
+bundle: portfolio
+label: 'Download English'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

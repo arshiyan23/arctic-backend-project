@@ -1,0 +1,31 @@
+uuid: e3bbd62b-e103-49bb-9be8-b0673e49fe00
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_footer_logo
+    - media.type.image
+    - media.type.svg
+id: block_content.footer_block.field_footer_logo
+field_name: field_footer_logo
+entity_type: block_content
+bundle: footer_block
+label: logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      svg: svg
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

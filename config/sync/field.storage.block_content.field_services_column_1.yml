@@ -1,0 +1,19 @@
+uuid: d7c1d4db-a0a1-4e2e-a301-584dd2d88639
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_services_column_1
+field_name: field_services_column_1
+entity_type: block_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

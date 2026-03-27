@@ -1,0 +1,23 @@
+uuid: d76492f5-0db5-4ccd-8edb-6a1390fcd23a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_no_of_regions
+    - paragraphs.paragraphs_type.a_closer_look
+id: paragraph.a_closer_look.field_no_of_regions
+field_name: field_no_of_regions
+entity_type: paragraph
+bundle: a_closer_look
+label: 'No of Regions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

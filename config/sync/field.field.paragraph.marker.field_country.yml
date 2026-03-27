@@ -1,0 +1,19 @@
+uuid: 92444c0d-9da8-4f21-8e2a-421c4f1777da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_country
+    - paragraphs.paragraphs_type.marker
+id: paragraph.marker.field_country
+field_name: field_country
+entity_type: paragraph
+bundle: marker
+label: Country
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

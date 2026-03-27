@@ -1,0 +1,19 @@
+uuid: 3200d97d-bd54-4dcf-a864-68ace3201057
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.investment_portfolio
+    - field.storage.block_content.field_retail_column_1
+id: block_content.investment_portfolio.field_retail_column_1
+field_name: field_retail_column_1
+entity_type: block_content
+bundle: investment_portfolio
+label: 'Retail Column 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,8 @@
+uuid: 9a7df325-8898-4fee-b3ee-5d8220a38a06
+langcode: en
+status: true
+dependencies: {  }
+id: press_release_body_2
+label: 'Press Release Body 2'
+revision: 0
+description: ''

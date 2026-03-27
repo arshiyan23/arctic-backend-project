@@ -1,0 +1,29 @@
+uuid: 3b6054a6-a2fb-4328-9cd0-53f8d9993321
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_small_image
+    - media.type.image
+    - paragraphs.paragraphs_type.a_closer_look
+id: paragraph.a_closer_look.field_small_image
+field_name: field_small_image
+entity_type: paragraph
+bundle: a_closer_look
+label: 'Small Image'
+description: 'Minimum Size: 556×362'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

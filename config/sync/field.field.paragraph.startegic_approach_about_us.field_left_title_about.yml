@@ -1,0 +1,19 @@
+uuid: 0352ae35-ad34-47a4-b9c5-0ef9e4e6e078
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_title_about
+    - paragraphs.paragraphs_type.startegic_approach_about_us
+id: paragraph.startegic_approach_about_us.field_left_title_about
+field_name: field_left_title_about
+entity_type: paragraph
+bundle: startegic_approach_about_us
+label: 'Left Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

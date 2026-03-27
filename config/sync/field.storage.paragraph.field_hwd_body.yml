@@ -1,0 +1,19 @@
+uuid: 5915fe9e-5f84-4929-874c-f58b20b8568c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_hwd_body
+field_name: field_hwd_body
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

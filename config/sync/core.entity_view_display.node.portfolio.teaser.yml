@@ -1,0 +1,76 @@
+uuid: a6c4711b-37e2-4c1a-9753-ddfe59392fc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_address
+    - field.field.node.portfolio.field_city_country
+    - field.field.node.portfolio.field_download
+    - field.field.node.portfolio.field_download_english
+    - field.field.node.portfolio.field_download_to_learn_more
+    - field.field.node.portfolio.field_features
+    - field.field.node.portfolio.field_hero_banner
+    - field.field.node.portfolio.field_map_address
+    - field.field.node.portfolio.field_map_image
+    - field.field.node.portfolio.field_meta_tags
+    - field.field.node.portfolio.field_next_project
+    - field.field.node.portfolio.field_property_gallery
+    - field.field.node.portfolio.field_property_image
+    - field.field.node.portfolio.field_protfolio_country
+    - field.field.node.portfolio.field_search_filter
+    - field.field.node.portfolio.field_show_on_home
+    - field.field.node.portfolio.field_tags
+    - field.field.node.portfolio.field_telephone
+    - field.field.node.portfolio.field_website
+    - node.type.portfolio
+  module:
+    - text
+    - user
+id: node.portfolio.teaser
+targetEntityType: node
+bundle: portfolio
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_address: true
+  field_city_country: true
+  field_download: true
+  field_download_english: true
+  field_download_to_learn_more: true
+  field_features: true
+  field_hero_banner: true
+  field_map_address: true
+  field_map_image: true
+  field_meta_tags: true
+  field_next_project: true
+  field_property_gallery: true
+  field_property_image: true
+  field_protfolio_country: true
+  field_search_filter: true
+  field_show_on_home: true
+  field_telephone: true
+  field_website: true
+  search_api_excerpt: true

@@ -1,0 +1,83 @@
+uuid: 59e8b27f-71ee-4748-9ee0-9004c7321132
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.marker.field_city_name
+    - field.field.paragraph.marker.field_country
+    - field.field.paragraph.marker.field_image
+    - field.field.paragraph.marker.field_latitude
+    - field.field.paragraph.marker.field_longitude
+    - field.field.paragraph.marker.field_property_name
+    - field.field.paragraph.marker.field_website_link
+    - paragraphs.paragraphs_type.marker
+  module:
+    - link
+id: paragraph.marker.default
+targetEntityType: paragraph
+bundle: marker
+mode: default
+content:
+  field_city_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_country:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_latitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_longitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_property_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_website_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

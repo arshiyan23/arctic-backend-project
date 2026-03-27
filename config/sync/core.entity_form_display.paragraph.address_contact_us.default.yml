@@ -1,0 +1,52 @@
+uuid: 918dd3ec-cec0-46b6-8346-b264bbb704ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.address_contact_us.field_address
+    - field.field.paragraph.address_contact_us.field_email
+    - field.field.paragraph.address_contact_us.field_fax
+    - field.field.paragraph.address_contact_us.field_tel
+    - paragraphs.paragraphs_type.address_contact_us
+  module:
+    - text
+id: paragraph.address_contact_us.default
+targetEntityType: paragraph
+bundle: address_contact_us
+mode: default
+content:
+  field_address:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_fax:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tel:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,73 @@
+uuid: 3903004c-12e5-477f-831f-6f55535da190
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon_text_main
+    - paragraphs.paragraphs_type.how_we_do_it_main
+    - paragraphs.paragraphs_type.icon_title_description
+  module:
+    - entity_reference_revisions
+id: paragraph.how_we_do_it_main.field_icon_text_main
+field_name: field_icon_text_main
+entity_type: paragraph
+bundle: how_we_do_it_main
+label: 'Icon Text Main'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      icon_title_description: icon_title_description
+    negate: 0
+    target_bundles_drag_drop:
+      a_closer_look:
+        weight: 18
+        enabled: false
+      about_us_values:
+        weight: 16
+        enabled: false
+      about_us_values_single_section:
+        weight: 17
+        enabled: false
+      counters:
+        weight: 19
+        enabled: false
+      details_of_achievements:
+        weight: 20
+        enabled: false
+      how_we_do_it_main:
+        weight: 21
+        enabled: false
+      icon_title_description:
+        weight: 22
+        enabled: true
+      intro_block:
+        weight: 23
+        enabled: false
+      map_markers:
+        weight: 24
+        enabled: false
+      marker:
+        weight: 25
+        enabled: false
+      mission_and_vision:
+        weight: 26
+        enabled: false
+      mission_and_vision_title_descrip:
+        weight: 27
+        enabled: false
+      our_strategic_approach:
+        weight: 28
+        enabled: false
+      title_description:
+        weight: 29
+        enabled: false
+      title_description_image:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

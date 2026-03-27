@@ -1,0 +1,17 @@
+uuid: 685f15ea-32fe-4e71-81c5-d5d9c57bf535
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Landing page'
+type: landing_page
+description: "Use Landing pages for your section landing content, such as a 'Home' page."
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

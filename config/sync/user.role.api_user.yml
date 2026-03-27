@@ -1,0 +1,24 @@
+uuid: 4eb528b9-d20e-4e18-984a-64da7070c5aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - rest.resource.webform_rest_submit
+  module:
+    - media
+    - rest
+    - search_logger
+    - subrequests
+    - system
+    - webform
+id: api_user
+label: 'Api user'
+weight: 4
+is_admin: null
+permissions:
+  - 'access any webform configuration'
+  - 'access content'
+  - 'access search logger api'
+  - 'issue subrequests'
+  - 'restful post webform_rest_submit'
+  - 'view media'

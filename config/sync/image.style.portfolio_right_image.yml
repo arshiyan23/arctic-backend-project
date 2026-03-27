@@ -1,0 +1,21 @@
+uuid: d84f0df7-ca8a-4e43-aa0a-6a04619759d6
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_right_image
+label: 'Portfolio Right Image 870×1080'
+effects:
+  f4034b5c-44ad-4cb8-8ffb-37ec46fbdcc5:
+    uuid: f4034b5c-44ad-4cb8-8ffb-37ec46fbdcc5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 870
+      height: 1080
+      anchor: center-center
+  1f3ccab6-f296-4865-bcf2-b273d80d5f2f:
+    uuid: 1f3ccab6-f296-4865-bcf2-b273d80d5f2f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,0 +1,8 @@
+uuid: b87b03dc-aa55-440b-b9bc-2f70120f0404
+langcode: en
+status: true
+dependencies: {  }
+name: 'Our Core Businesses'
+vid: our_core_businesses
+description: 'Our core businesses'
+weight: 0

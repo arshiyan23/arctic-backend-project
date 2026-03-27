@@ -1,0 +1,21 @@
+uuid: ff5405de-6b3e-4d0d-9f9e-735a42ef245a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.press_release
+  module:
+    - metatag
+id: node.press_release.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: press_release
+label: 'Meta Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

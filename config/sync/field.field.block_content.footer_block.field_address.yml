@@ -1,0 +1,19 @@
+uuid: f8c9f930-4f22-41d7-b6dd-7e5bbefc3c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_address
+id: block_content.footer_block.field_address
+field_name: field_address
+entity_type: block_content
+bundle: footer_block
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: cb08fb43-b808-4c18-a022-1ea5fd1a0033
+langcode: en
+status: false
+dependencies:
+  module:
+    - basic_auth
+    - search_api
+    - serialization
+id: entity.search_api_index
+plugin_id: 'entity:search_api_index'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - basic_auth

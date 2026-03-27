@@ -1,0 +1,79 @@
+uuid: 4cdd66fb-6dea-420d-86f2-fafd487eac09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.policy_pages.body
+    - field.field.node.policy_pages.field_content
+    - field.field.node.policy_pages.field_download
+    - field.field.node.policy_pages.field_download_english
+    - field.field.node.policy_pages.field_download_to_learn_more
+    - field.field.node.policy_pages.field_meta_tags
+    - node.type.policy_pages
+  module:
+    - entity_reference_revisions
+    - metatag
+    - text
+    - user
+id: node.policy_pages.default
+targetEntityType: node
+bundle: policy_pages
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_download:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_download_english:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_download_to_learn_more:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: afe9c949-2a19-4190-bb5d-5ce788324503
+langcode: en
+status: true
+dependencies: {  }
+name: about_us_chairman
+label: 'About us chairman'
+effects:
+  e0963a2c-966a-4cfa-9471-32a4c2292a02:
+    uuid: e0963a2c-966a-4cfa-9471-32a4c2292a02
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 684
+      height: 378
+      anchor: center-top
+  6b73e721-e879-4167-b8e1-c1ce912851d2:
+    uuid: 6b73e721-e879-4167-b8e1-c1ce912851d2
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

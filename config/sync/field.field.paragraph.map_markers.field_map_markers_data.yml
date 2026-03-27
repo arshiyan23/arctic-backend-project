@@ -1,0 +1,43 @@
+uuid: b60c6228-d44a-4aea-bd3f-6735895270b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_map_markers_data
+    - paragraphs.paragraphs_type.map_markers
+    - paragraphs.paragraphs_type.marker
+  module:
+    - entity_reference_revisions
+id: paragraph.map_markers.field_map_markers_data
+field_name: field_map_markers_data
+entity_type: paragraph
+bundle: map_markers
+label: 'Map Markers Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      marker: marker
+    negate: 0
+    target_bundles_drag_drop:
+      counters:
+        weight: 6
+        enabled: false
+      details_of_achievements:
+        weight: 7
+        enabled: false
+      intro_block:
+        weight: 8
+        enabled: false
+      map_markers:
+        weight: 9
+        enabled: false
+      marker:
+        weight: 10
+        enabled: true
+field_type: entity_reference_revisions

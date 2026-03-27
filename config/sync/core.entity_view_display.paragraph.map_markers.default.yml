@@ -1,0 +1,24 @@
+uuid: e090a8e6-1b83-4798-9434-ef147ab56fef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_markers.field_map_markers_data
+    - paragraphs.paragraphs_type.map_markers
+  module:
+    - entity_reference_revisions
+id: paragraph.map_markers.default
+targetEntityType: paragraph
+bundle: map_markers
+mode: default
+content:
+  field_map_markers_data:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

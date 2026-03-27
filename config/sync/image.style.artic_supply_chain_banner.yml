@@ -1,0 +1,21 @@
+uuid: cb21b7a5-2041-4970-93c6-54dabe79b9f3
+langcode: en
+status: true
+dependencies: {  }
+name: artic_supply_chain_banner
+label: 'Artic Supply Chain Banner 1119×680'
+effects:
+  f88811c9-6224-4c99-bd79-e3a9bfeba131:
+    uuid: f88811c9-6224-4c99-bd79-e3a9bfeba131
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1119
+      height: 680
+      anchor: center-center
+  3fb27836-6165-4e60-b68a-d0d3ff08bf89:
+    uuid: 3fb27836-6165-4e60-b68a-d0d3ff08bf89
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

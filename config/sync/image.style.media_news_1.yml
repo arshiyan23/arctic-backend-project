@@ -1,0 +1,21 @@
+uuid: 58c0394d-473d-4206-a78a-ab26da15e495
+langcode: en
+status: true
+dependencies: {  }
+name: media_news_1
+label: 'Media News 1 1147×525'
+effects:
+  1a884e45-1f3d-465b-ba3a-08a200de2578:
+    uuid: 1a884e45-1f3d-465b-ba3a-08a200de2578
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1147
+      height: 525
+      anchor: center-top
+  e9f882a8-43fb-43f1-a7c8-4ffd52593b74:
+    uuid: e9f882a8-43fb-43f1-a7c8-4ffd52593b74
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

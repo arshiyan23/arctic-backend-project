@@ -1,0 +1,37 @@
+uuid: 506c2d23-a4c5-40fc-9d76-f6561f0ad74f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_data_details
+    - paragraphs.paragraphs_type.counters
+    - paragraphs.paragraphs_type.details_of_achievements
+  module:
+    - entity_reference_revisions
+id: paragraph.details_of_achievements.field_data_details
+field_name: field_data_details
+entity_type: paragraph
+bundle: details_of_achievements
+label: 'Data Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      counters: counters
+    negate: 0
+    target_bundles_drag_drop:
+      counters:
+        weight: 4
+        enabled: true
+      details_of_achievements:
+        weight: 5
+        enabled: false
+      intro_block:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

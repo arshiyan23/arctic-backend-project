@@ -1,0 +1,21 @@
+uuid: 4da6a34e-e867-4fea-ba27-19077694884b
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_top_image
+label: 'Portfolio Top Image 1760×1080'
+effects:
+  69008a0c-9268-454d-89ca-b06c194bc6e8:
+    uuid: 69008a0c-9268-454d-89ca-b06c194bc6e8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1760
+      height: 1080
+      anchor: center-center
+  5d35d07e-c8ed-4bb2-8aad-0db711a91d8f:
+    uuid: 5d35d07e-c8ed-4bb2-8aad-0db711a91d8f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -1,0 +1,19 @@
+uuid: 60a8face-edb4-426f-9a49-9ea22e8bc670
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_working_hours
+id: block_content.footer_block.field_working_hours
+field_name: field_working_hours
+entity_type: block_content
+bundle: footer_block
+label: 'working hours'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

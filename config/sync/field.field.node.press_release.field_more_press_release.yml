@@ -1,0 +1,28 @@
+uuid: badfec7b-7629-45b8-aa68-61b645652526
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_press_release
+    - node.type.press_release
+id: node.press_release.field_more_press_release
+field_name: field_more_press_release
+entity_type: node
+bundle: press_release
+label: 'More Press Release'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      press_release: press_release
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

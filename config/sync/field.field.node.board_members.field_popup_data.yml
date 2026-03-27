@@ -1,0 +1,19 @@
+uuid: 448bea52-09c8-43db-8ab6-55ed55720c7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_popup_data
+    - node.type.board_members
+id: node.board_members.field_popup_data
+field_name: field_popup_data
+entity_type: node
+bundle: board_members
+label: 'Popup Data'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

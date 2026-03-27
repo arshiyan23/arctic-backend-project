@@ -1,0 +1,31 @@
+uuid: 3272f2b8-8723-473e-bfc5-e6efd8378366
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.our_partners.field_partners_logo
+    - taxonomy.vocabulary.our_partners
+  module:
+    - text
+id: taxonomy_term.our_partners.default
+targetEntityType: taxonomy_term
+bundle: our_partners
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_partners_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

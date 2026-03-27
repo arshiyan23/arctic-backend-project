@@ -1,0 +1,21 @@
+uuid: 2962c345-f0c1-4e41-a7c5-cddd437c6695
+langcode: en
+status: true
+dependencies: {  }
+name: media_video_1
+label: 'Media Video 1 1165×755'
+effects:
+  4c96425c-70a4-41a8-a6a0-e02d2ccb6b32:
+    uuid: 4c96425c-70a4-41a8-a6a0-e02d2ccb6b32
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1165
+      height: 755
+      anchor: center-center
+  0a8a37ae-ee29-4c51-942b-d99ceb0d3bf2:
+    uuid: 0a8a37ae-ee29-4c51-942b-d99ceb0d3bf2
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

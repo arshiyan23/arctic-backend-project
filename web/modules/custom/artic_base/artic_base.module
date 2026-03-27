@@ -1,0 +1,291 @@
+<?php
+
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * Implements hook_form_alter().
+ */
+function artic_base_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  // Alter specific forms based on their form ID.
+  if (is_array($form['#theme']) && in_array('node_form', $form['#theme'])) {
+
+    $form['bannercontainer'] = [
+      '#type' => 'details',
+      '#group' => 'advanced', // This line places the container in the sidebar
+      '#weight' => 99,  // ensure it displays last or use -10 to show it first.
+      '#title' => t('Video/Image Banner'),
+      '#tree' => TRUE,
+      '#access' => TRUE,
+    ];
+
+    if (!empty($form['field_video_image_banner'])) {
+      $form['field_video_image_banner']['#weight'] = -1; // reset weight 
+      $form['field_video_image_banner']['#group'] = 'bannercontainer';
+    }
+
+    if (!empty($form['field_banner_title'])) {
+      $form['field_banner_title']['#weight'] = -1; // reset weight 
+      $form['field_banner_title']['#group'] = 'bannercontainer';
+    }
+
+    if (!empty($form['field_banner_sub_title'])) {
+      $form['field_banner_sub_title']['#weight'] = -1; // reset weight 
+      $form['field_banner_sub_title']['#group'] = 'bannercontainer';
+    }
+
+  }
+}
+
+/**
+ * Implements filter_image_styles().
+ */
+function filter_image_styles(&$resource_object, $field_name, $allowed_styles)
+{
+  if (isset($resource_object[$field_name]['field_media_image']['image_style_uri'])) {
+    $filtered_styles = array_intersect_key(
+      $resource_object[$field_name]['field_media_image']['image_style_uri'],
+      array_flip($allowed_styles)
+    );
+    $resource_object[$field_name]['field_media_image']['image_style_uri'] = $filtered_styles;
+  }
+}
+
+/**
+ * Implements hook_jsonapi_response_alter().
+ */
+function artic_base_jsonapi_response_alter(array &$jsonapi_response, Response $response)
+{
+  if (isset($jsonapi_response['meta']['facets'])) {
+    // Load all terms from the search_filter vocabulary
+    $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $terms = $term_storage->loadTree('search_filter');
+
+    // Prepare an array to track existing terms in the response
+    $existing_terms = [];
+    $sum = 0;
+
+    // Iterate through the facets to sum up the counts and track existing terms
+    foreach ($jsonapi_response['meta']['facets'][0]['terms'] as $term) {
+      if (isset($term['values']['count'])) {
+        $sum += $term['values']['count'];
+        $existing_terms[$term['values']['value']] = true;
+      }
+    }
+
+    // Convert all keys in $existing_terms to lowercase for case-insensitive comparison
+    $existing_terms_lowercase = array_change_key_case($existing_terms, CASE_LOWER);
+
+    // Iterate through the loaded terms to check for missing terms
+    foreach ($terms as $term) {
+      // Convert $term->name to lowercase for case-insensitive comparison
+      $term_name_lower = strtolower($term->name);
+
+      if (!isset($existing_terms_lowercase[$term_name_lower])) {
+        // Add the missing term with count 0
+        $jsonapi_response['meta']['facets'][0]['terms'][] = [
+          'url' => '',
+          'values' => [
+            'value' => $term->name,
+            'label' => $term->name,
+            'active' => false,
+            'count' => 0,
+          ],
+        ];
+      }
+    }
+
+    // Sort the second JSON to match the order of the taxonomy terms in a case-insensitive manner
+    usort($jsonapi_response['meta']['facets'][0]['terms'], function ($a, $b) use ($terms) {
+      // Create an array of lowercase term names for ordering
+      $order = array_map('strtolower', array_column($terms, 'name'));
+
+      // Get the positions of the current values in the order array, in lowercase
+      $pos_a = array_search(strtolower($a['values']['value']), $order);
+      $pos_b = array_search(strtolower($b['values']['value']), $order);
+
+      // Handle cases where terms are not found in the order array
+      if ($pos_a === false && $pos_b === false) {
+        return 0;
+      }
+      if ($pos_a === false) {
+        return 1;
+      }
+      if ($pos_b === false) {
+        return -1;
+      }
+
+      return $pos_a - $pos_b;
+    });
+
+
+    // Update the main count
+    $jsonapi_response['meta']['count'] = $sum;
+  }
+
+  // For Portfolio
+  if (isset($jsonapi_response['data'])) {
+    foreach ($jsonapi_response['data'] as &$resource_object) {
+      filter_image_styles($resource_object, 'field_property_image', [
+        'portfolio_banner',
+        'portfolio_left_image',
+        'portfolio_listing',
+        'portfolio_map_image',
+        'portfolio_next_image',
+        'portfolio_right_image',
+        'portfolio_top_image'
+      ]);
+
+      filter_image_styles($resource_object, 'field_news_thumbnail', [
+        'home_news',
+        'media_news_1',
+        'media_news_2',
+        'media_video_1',
+        'news_listing'
+      ]);
+
+      if (isset($resource_object['field_partners_logo']['field_media_image']['image_style_uri'])) {
+        $resource_object['field_partners_logo']['field_media_image']['image_style_uri'] = [];
+      }
+
+      filter_image_styles($resource_object, 'field_our_legacy_member_image', [
+        'about_us_chairman',
+        'board_members_section',
+        'home_our_leadership',
+        'home_our_legacy'
+      ]);
+    }
+
+    if (isset($jsonapi_response['data']['field_sections'])) {
+      foreach ($jsonapi_response['data']['field_sections'] as &$resource_object2) {
+        filter_image_styles($resource_object2, 'field_small_image', ['a_closer_look_1']);
+        filter_image_styles($resource_object2, 'field_big_image', ['a_closer_look_2']);
+
+        if (isset($resource_object2['field_map_markers_data'])) {
+          foreach ($resource_object2['field_map_markers_data'] as &$marker) {
+            filter_image_styles($marker, 'field_image', ['map_image']);
+          }
+        }
+      }
+    }
+
+    filter_image_styles($jsonapi_response['data'], 'field_video_image_banner', [
+      'portfolio_banner',
+      'about_us_chairman'
+    ]);
+  }
+
+  /* This code is for global meta title and meta description */
+  $self_url = $jsonapi_response['links']['self']['href'];
+  // Parse the URL and get the path
+  $parsed_url = parse_url($self_url);
+  // Check if the 'path' component exists
+  if (isset($parsed_url['path'])) {
+    $path = $parsed_url['path'];
+  }
+
+  if (isset($path)) {
+    // Load the content type storage.
+    $content_type_storage = \Drupal::entityTypeManager()->getStorage('node_type');
+
+    // Load all content type entities.
+    $content_types = $content_type_storage->loadMultiple();
+
+    // Iterate over content types and get their names.
+    foreach ($content_types as $content_type) {
+      $content_type_id = $content_type->id();
+      $current_path = "/jsonapi/node/" . $content_type_id;
+
+      // Check if the current path matches the desired path
+      if ($current_path === $path) {
+        // Print only the matching sub-array
+        $result = [
+          'meta_title' => $content_type->label(),
+          'meta_description' => $content_type->get('description'),
+          'path' => $current_path,
+        ];
+        $jsonapi_response['list_page_meta_tags'] = $result;
+        break; // Exit loop once the matching path is found
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_form_node_form_alter().
+ */
+function artic_base_form_node_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  // Get the node object from the form state.
+  $node = $form_state->getFormObject()->getEntity();
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $form['custom_html_note'] = [
+      '#type' => 'markup',
+      '#markup' => '
+      <div class="custom-edit-links">
+        <p><strong>Important:</strong> Clicking on these links may redirect you to other pages. Please save your work before proceeding.</p>
+      </div>',
+      '#weight' => 99,
+    ];
+  }
+  // Check if the entity is a node and of a specific content type (e.g., 'article').
+  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'landing_page') {
+    // Add custom HTML text to the form.
+    $form['custom_html_text'] = [
+      '#type' => 'markup',
+      '#markup' => '
+      <div class="custom-edit-links">
+        <h6>Other Sections</h6>
+        <ul>
+          <li>Home Page</li>
+          <li><a href="/admin/structure/taxonomy/manage/our_core_businesses/overview" target="_blank">Edit Our Core Businesses</a></li>
+          <li><a href="/admin/structure/taxonomy/manage/our_partners/overview" target="_blank">Edit Our Partners</a></li>
+          <li>Home Page & About</li>
+          <li><a href="/admin/content?title=&type=board_members&status=All&langcode=All" target="_blank">Edit Board Members</a></li>
+          <li><a href="/admin/content?title=&type=executive_management&status=All&langcode=All" target="_blank">Edit Executive Management</a></li>
+          <li>Portfolio Listing Page</li>
+          <li><a href="/admin/content/block/10?destination=/admin/content" target="_blank">Edit View Artic Investment (PDF)</a></li>
+          <li>Supply Chain</li>
+          <li><a href="/admin/content/block/9?destination=/admin/content" target="_blank">Edit Artic Supply Chain Header Text+Image</a></li>
+        </ul>
+      </div>',
+      '#weight' => 99,
+    ];
+  }
+  if ($node instanceof \Drupal\node\NodeInterface && $node->getType() == 'press_release') {
+    // Add custom HTML text to the form.
+    $form['custom_html_text'] = [
+      '#type' => 'markup',
+      '#markup' => '
+      <div class="custom-edit-links">
+        <h6>Other Sections</h6>
+        <ul>
+          <li><a href="/admin/content/block/8?destination=/admin/content" target="_blank">Edit About Al Rayyan Tourism Investment Company (ARTIC)</a></li>
+        </ul>
+      </div>',
+      '#weight' => 99,
+    ];
+  }
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // Add custom HTML text to the form.
+    $form['custom_html_footer'] = [
+      '#type' => 'markup',
+      '#markup' => '
+      <div class="custom-edit-links">
+        <h6>Header Section</h6>
+        <ul>
+          <li><a href="/admin/structure/menu/manage/main?destination=/admin/content" target="_blank">Edit Main Menu</a></li>
+        </ul>
+        <h6>Footer Section</h6>
+        <ul>
+          <li><a href="/admin/content/block/2?destination=/admin/content" target="_blank">Edit Office, Working Hours, Business, Career and Copyright</a></li>
+          <li><a href="/admin/structure/menu/manage/footer-menu?destination=/admin/content" target="_blank">Edit Site Menu</a></li>
+          <li><a href="/admin/structure/menu/manage/footer?destination=/admin/content" target="_blank">Edit Privacy Menu</a></li>
+          <li><a href="/admin/structure/menu/manage/social-media?destination=/admin/content" target="_blank">Edit Social Media Menu</a></li>
+        </ul>
+      </div>',
+      '#weight' => 99,
+    ];
+  }
+}

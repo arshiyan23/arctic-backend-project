@@ -1,0 +1,24 @@
+uuid: 62378cc6-965f-4357-af63-624a18fac339
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.press_release_body_2
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.press_release_body_2.body
+field_name: body
+entity_type: block_content
+bundle: press_release_body_2
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

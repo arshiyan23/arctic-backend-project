@@ -1,0 +1,73 @@
+uuid: 46ad285a-43d9-496a-82d4-c771f3684766
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_features
+    - node.type.portfolio
+    - paragraphs.paragraphs_type.our_strategic_approach
+  module:
+    - entity_reference_revisions
+id: node.portfolio.field_features
+field_name: field_features
+entity_type: node
+bundle: portfolio
+label: Features
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      our_strategic_approach: our_strategic_approach
+    negate: 0
+    target_bundles_drag_drop:
+      a_closer_look:
+        weight: 18
+        enabled: false
+      about_us_values:
+        weight: 16
+        enabled: false
+      about_us_values_single_section:
+        weight: 17
+        enabled: false
+      counters:
+        weight: 19
+        enabled: false
+      details_of_achievements:
+        weight: 20
+        enabled: false
+      how_we_do_it_main:
+        weight: 21
+        enabled: false
+      icon_title_description:
+        weight: 22
+        enabled: false
+      intro_block:
+        weight: 23
+        enabled: false
+      map_markers:
+        weight: 24
+        enabled: false
+      marker:
+        weight: 25
+        enabled: false
+      mission_and_vision:
+        weight: 26
+        enabled: false
+      mission_and_vision_title_descrip:
+        weight: 27
+        enabled: false
+      our_strategic_approach:
+        weight: 28
+        enabled: true
+      title_description:
+        weight: 29
+        enabled: false
+      title_description_image:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

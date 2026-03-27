@@ -1,0 +1,19 @@
+uuid: 437654a6-ec7b-4390-8c5b-e05b7dd2a6c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_currency_symbol
+    - paragraphs.paragraphs_type.counters
+id: paragraph.counters.field_currency_symbol
+field_name: field_currency_symbol
+entity_type: paragraph
+bundle: counters
+label: 'Currency Symbol (Eg: $)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

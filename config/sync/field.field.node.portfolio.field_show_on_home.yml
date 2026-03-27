@@ -1,0 +1,23 @@
+uuid: 789319c8-cff4-4dc4-946c-29d7c9f73b24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_on_home
+    - node.type.portfolio
+id: node.portfolio.field_show_on_home
+field_name: field_show_on_home
+entity_type: node
+bundle: portfolio
+label: 'Show on Home'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

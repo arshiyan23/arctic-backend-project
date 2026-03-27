@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_help().
+ */
+function search_logger_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.search_logger':
+      return '<p>' . t('Logs search queries and provides JSON:API endpoints for top searches.') . '</p>';
+  }
+}

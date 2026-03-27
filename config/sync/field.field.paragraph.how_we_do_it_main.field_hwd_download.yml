@@ -1,0 +1,29 @@
+uuid: 39f65eeb-5c0d-41d8-a85d-aa58b3193ed5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_download
+    - media.type.document
+    - paragraphs.paragraphs_type.how_we_do_it_main
+id: paragraph.how_we_do_it_main.field_hwd_download
+field_name: field_hwd_download
+entity_type: paragraph
+bundle: how_we_do_it_main
+label: 'Download to learn more'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

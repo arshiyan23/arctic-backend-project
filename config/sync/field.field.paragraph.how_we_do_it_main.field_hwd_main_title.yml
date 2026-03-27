@@ -1,0 +1,19 @@
+uuid: 017cd070-38a7-4c46-949a-876906c9f7c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_main_title
+    - paragraphs.paragraphs_type.how_we_do_it_main
+id: paragraph.how_we_do_it_main.field_hwd_main_title
+field_name: field_hwd_main_title
+entity_type: paragraph
+bundle: how_we_do_it_main
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: ca4c467b-5c07-4efe-87a9-114340c4a0a7
+langcode: en
+status: true
+dependencies: {  }
+id: a_closer_look
+label: 'A Closer Look'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

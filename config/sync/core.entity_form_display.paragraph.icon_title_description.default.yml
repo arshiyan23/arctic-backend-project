@@ -1,0 +1,42 @@
+uuid: 3d9c92ad-a227-4577-a11a-e999ec0d418b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icon_title_description.field_hwd_description
+    - field.field.paragraph.icon_title_description.field_hwd_title
+    - field.field.paragraph.icon_title_description.field_icon
+    - paragraphs.paragraphs_type.icon_title_description
+  module:
+    - media_library
+id: paragraph.icon_title_description.default
+targetEntityType: paragraph
+bundle: icon_title_description
+mode: default
+content:
+  field_hwd_description:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hwd_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_icon:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

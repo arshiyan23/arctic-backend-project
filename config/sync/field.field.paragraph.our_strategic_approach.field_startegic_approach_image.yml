@@ -1,0 +1,38 @@
+uuid: 0939aa83-4092-4b47-ac51-f18fc99a0172
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_startegic_approach_image
+    - paragraphs.paragraphs_type.our_strategic_approach
+  module:
+    - image
+id: paragraph.our_strategic_approach.field_startegic_approach_image
+field_name: field_startegic_approach_image
+entity_type: paragraph
+bundle: our_strategic_approach
+label: 'startegic approach image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

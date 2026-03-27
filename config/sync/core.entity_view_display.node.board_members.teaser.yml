@@ -1,0 +1,55 @@
+uuid: 9c258da2-2367-4bc0-bf2c-e72120273882
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.board_members.body
+    - field.field.node.board_members.field_about_us_image
+    - field.field.node.board_members.field_board_member_name
+    - field.field.node.board_members.field_designation
+    - field.field.node.board_members.field_download
+    - field.field.node.board_members.field_download_english
+    - field.field.node.board_members.field_download_to_learn_more
+    - field.field.node.board_members.field_members_image
+    - field.field.node.board_members.field_message
+    - field.field.node.board_members.field_order
+    - field.field.node.board_members.field_our_legacy_member_image
+    - field.field.node.board_members.field_popup_data
+    - field.field.node.board_members.field_search_filter
+    - node.type.board_members
+  module:
+    - text
+    - user
+id: node.board_members.teaser
+targetEntityType: node
+bundle: board_members
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_about_us_image: true
+  field_board_member_name: true
+  field_designation: true
+  field_download: true
+  field_download_english: true
+  field_download_to_learn_more: true
+  field_members_image: true
+  field_message: true
+  field_order: true
+  field_our_legacy_member_image: true
+  field_popup_data: true
+  field_search_filter: true
+  search_api_excerpt: true

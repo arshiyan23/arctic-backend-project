@@ -1,0 +1,25 @@
+uuid: d2ee6091-1d7c-4d04-b7c1-fde81469d6d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-media
+  module:
+    - system
+  theme:
+    - artic
+id: artic_socialmedia_3
+theme: artic
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:social-media'
+settings:
+  id: 'system_menu_block:social-media'
+  label: 'Social Media'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

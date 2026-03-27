@@ -1,0 +1,29 @@
+uuid: 41f5a86b-61bf-4f72-bf6e-6ca256916c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_filter
+    - node.type.landing_page
+    - taxonomy.vocabulary.search_filter
+id: node.landing_page.field_search_filter
+field_name: field_search_filter
+entity_type: node
+bundle: landing_page
+label: 'Search Filter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      search_filter: search_filter
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

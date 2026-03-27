@@ -1,0 +1,10 @@
+uuid: 29f9a455-96f7-4711-a56b-c1027f5c76ee
+langcode: en
+status: true
+dependencies: {  }
+id: our_strategic_approach
+label: 'our strategic approach'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

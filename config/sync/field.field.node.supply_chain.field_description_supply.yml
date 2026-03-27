@@ -1,0 +1,19 @@
+uuid: 8440cbef-33a0-43d5-ab8f-f368e5657b69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_supply
+    - node.type.supply_chain
+id: node.supply_chain.field_description_supply
+field_name: field_description_supply
+entity_type: node
+bundle: supply_chain
+label: 'Description supply '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+uuid: aedcd3d9-9958-4e9a-aba4-a7ef4ffe1ab2
+langcode: en
+status: true
+dependencies: {  }
+id: startegic_approach_about_us
+label: 'Startegic approach About us'
+icon_uuid: null
+icon_default: null
+description: 'used to add content in about us page'
+behavior_plugins: {  }

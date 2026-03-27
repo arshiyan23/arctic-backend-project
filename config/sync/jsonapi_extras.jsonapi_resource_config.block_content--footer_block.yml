@@ -1,0 +1,168 @@
+uuid: d230bd2e-a189-4c36-a275-92adf1f6070e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_footer_logo.field_media_svg
+    page_limit: 50
+id: block_content--footer_block
+disabled: false
+path: block_content/footer_block
+resourceType: block_content--footer_block
+resourceFields:
+  id:
+    disabled: true
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: true
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_created:
+    disabled: true
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  info:
+    disabled: true
+    fieldName: info
+    publicName: info
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  reusable:
+    disabled: true
+    fieldName: reusable
+    publicName: reusable
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  moderation_state:
+    disabled: true
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+  body:
+    disabled: true
+    fieldName: body
+    publicName: body
+    enhancer:
+      id: ''
+  field_address:
+    disabled: false
+    fieldName: field_address
+    publicName: field_address
+    enhancer:
+      id: ''
+  field_business:
+    disabled: false
+    fieldName: field_business
+    publicName: field_business
+    enhancer:
+      id: ''
+  field_career:
+    disabled: false
+    fieldName: field_career
+    publicName: field_career
+    enhancer:
+      id: ''
+  field_copyright:
+    disabled: false
+    fieldName: field_copyright
+    publicName: field_copyright
+    enhancer:
+      id: ''
+  field_fax:
+    disabled: false
+    fieldName: field_fax
+    publicName: field_fax
+    enhancer:
+      id: ''
+  field_footer_logo:
+    disabled: false
+    fieldName: field_footer_logo
+    publicName: field_footer_logo
+    enhancer:
+      id: ''
+  field_telephone:
+    disabled: false
+    fieldName: field_telephone
+    publicName: field_telephone
+    enhancer:
+      id: ''
+  field_working_hours:
+    disabled: false
+    fieldName: field_working_hours
+    publicName: field_working_hours
+    enhancer:
+      id: ''

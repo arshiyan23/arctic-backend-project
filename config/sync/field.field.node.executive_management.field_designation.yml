@@ -1,0 +1,19 @@
+uuid: 9b0f81e1-8a9c-4221-8f1f-c0bea59fcbb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_designation
+    - node.type.executive_management
+id: node.executive_management.field_designation
+field_name: field_designation
+entity_type: node
+bundle: executive_management
+label: Designation
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

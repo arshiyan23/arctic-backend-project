@@ -1,0 +1,21 @@
+uuid: d9140cca-3191-4307-b9b3-384361006f14
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_listing
+label: 'Portfolio Listing 555x600'
+effects:
+  07d0568c-89a3-4b4f-8e57-979945ab324f:
+    uuid: 07d0568c-89a3-4b4f-8e57-979945ab324f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 555
+      height: 600
+      anchor: center-top
+  45e8178b-930d-4f64-9f0c-a8ef1acf0262:
+    uuid: 45e8178b-930d-4f64-9f0c-a8ef1acf0262
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

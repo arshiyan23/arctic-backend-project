@@ -1,0 +1,29 @@
+uuid: 768bd4c7-bf40-45c3-af4e-31cdce08b10b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download_to_learn_more
+    - media.type.document
+    - node.type.landing_page
+id: node.landing_page.field_download_to_learn_more
+field_name: field_download_to_learn_more
+entity_type: node
+bundle: landing_page
+label: 'Download to learn more'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

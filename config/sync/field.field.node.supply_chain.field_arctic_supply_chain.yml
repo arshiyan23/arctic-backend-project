@@ -1,0 +1,76 @@
+uuid: 95cb76e5-f6ab-4b6a-857a-48e41351ea03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_arctic_supply_chain
+    - node.type.supply_chain
+    - paragraphs.paragraphs_type.title_description_image
+  module:
+    - entity_reference_revisions
+id: node.supply_chain.field_arctic_supply_chain
+field_name: field_arctic_supply_chain
+entity_type: node
+bundle: supply_chain
+label: 'Arctic supply chain'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      title_description_image: title_description_image
+    negate: 0
+    target_bundles_drag_drop:
+      a_closer_look:
+        weight: 18
+        enabled: false
+      address_contact_us:
+        weight: 17
+        enabled: false
+      counters:
+        weight: 19
+        enabled: false
+      details_of_achievements:
+        weight: 20
+        enabled: false
+      how_we_do_it_main:
+        weight: 21
+        enabled: false
+      icon_title_description:
+        weight: 22
+        enabled: false
+      intro_block:
+        weight: 23
+        enabled: false
+      map_markers:
+        weight: 24
+        enabled: false
+      marker:
+        weight: 25
+        enabled: false
+      our_strategic_approach:
+        weight: 26
+        enabled: false
+      policy_content:
+        weight: 27
+        enabled: false
+      startegic_approach_about_us:
+        weight: 28
+        enabled: false
+      title_description:
+        weight: 29
+        enabled: false
+      title_description_image:
+        weight: 30
+        enabled: true
+      video_gallery:
+        weight: 31
+        enabled: false
+      video_section:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

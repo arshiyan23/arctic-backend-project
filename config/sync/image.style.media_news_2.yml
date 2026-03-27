@@ -1,0 +1,21 @@
+uuid: 68ccdf5d-a8e7-4187-8dbd-e6f7ceb727e6
+langcode: en
+status: true
+dependencies: {  }
+name: media_news_2
+label: 'Media News 2'
+effects:
+  5d16c57f-c8fb-4cf2-886f-c8b1f111086c:
+    uuid: 5d16c57f-c8fb-4cf2-886f-c8b1f111086c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 535
+      height: 320
+      anchor: center-top
+  ff5d6329-5a8f-44d3-8c0b-d7c6ce1cf32e:
+    uuid: ff5d6329-5a8f-44d3-8c0b-d7c6ce1cf32e
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

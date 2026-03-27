@@ -1,0 +1,19 @@
+uuid: bdfe7d28-0787-4bb2-a193-5d83438b0b75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fax
+    - paragraphs.paragraphs_type.address_contact_us
+id: paragraph.address_contact_us.field_fax
+field_name: field_fax
+entity_type: paragraph
+bundle: address_contact_us
+label: Fax
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

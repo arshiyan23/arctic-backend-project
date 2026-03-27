@@ -1,0 +1,31 @@
+_core:
+  default_config_hash: wOZVD8Wsf3NSSsAU36-FVkO7zaC4TgH_Buj0Up6vHYQ
+image_styles:
+  a_closer_look_1: a_closer_look_1
+  a_closer_look_2: a_closer_look_2
+  about_us_chairman: about_us_chairman
+  artic_supply_chain_banner: artic_supply_chain_banner
+  board_members_section: board_members_section
+  home_news: home_news
+  home_our_leadership: home_our_leadership
+  home_our_legacy: home_our_legacy
+  map_image: map_image
+  media_news_1: media_news_1
+  media_news_2: media_news_2
+  media_video_1: media_video_1
+  news_listing: news_listing
+  portfolio_banner: portfolio_banner
+  portfolio_left_image: portfolio_left_image
+  portfolio_listing: portfolio_listing
+  portfolio_map_image: portfolio_map_image
+  portfolio_next_image: portfolio_next_image
+  portfolio_right_image: portfolio_right_image
+  portfolio_top_image: portfolio_top_image
+  press_release_banner: press_release_banner
+  procurement_supply_chain: procurement_supply_chain
+  sustainability_banner: sustainability_banner
+  large: '0'
+  media_library: '0'
+  medium: '0'
+  thumbnail: '0'
+  wide: '0'

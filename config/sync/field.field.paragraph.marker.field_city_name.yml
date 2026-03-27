@@ -1,0 +1,19 @@
+uuid: b301d493-d6dc-49cd-bb24-a2d4dc74348d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_city_name
+    - paragraphs.paragraphs_type.marker
+id: paragraph.marker.field_city_name
+field_name: field_city_name
+entity_type: paragraph
+bundle: marker
+label: 'City Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

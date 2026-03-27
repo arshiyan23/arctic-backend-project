@@ -1,0 +1,29 @@
+uuid: bc95a276-354d-44d3-9292-127bbd163565
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_image
+    - media.type.image
+    - node.type.portfolio
+id: node.portfolio.field_property_image
+field_name: field_property_image
+entity_type: node
+bundle: portfolio
+label: 'Property Image'
+description: 'Minimum Size: 555x600'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

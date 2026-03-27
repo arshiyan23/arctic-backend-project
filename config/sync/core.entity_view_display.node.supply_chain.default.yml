@@ -1,0 +1,144 @@
+uuid: d04a4da2-e035-4792-a681-ae6753d2c231
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.supply_chain.body
+    - field.field.node.supply_chain.field_amount
+    - field.field.node.supply_chain.field_arctic_supply_chain
+    - field.field.node.supply_chain.field_description_supply
+    - field.field.node.supply_chain.field_download
+    - field.field.node.supply_chain.field_download_english
+    - field.field.node.supply_chain.field_download_to_learn_more
+    - field.field.node.supply_chain.field_end_date
+    - field.field.node.supply_chain.field_meta_tags
+    - field.field.node.supply_chain.field_pdf_supply
+    - field.field.node.supply_chain.field_search_filter
+    - field.field.node.supply_chain.field_tender_no
+    - field.field.node.supply_chain.field_title_tender_list
+    - node.type.supply_chain
+  module:
+    - datetime
+    - entity_reference_revisions
+    - metatag
+    - text
+    - user
+id: node.supply_chain.default
+targetEntityType: node
+bundle: supply_chain
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_arctic_supply_chain:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_description_supply:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_download:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_download_english:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_download_to_learn_more:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_pdf_supply:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_search_filter:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_tender_no:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_title_tender_list:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

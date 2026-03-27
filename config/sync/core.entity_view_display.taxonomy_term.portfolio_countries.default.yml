@@ -1,0 +1,32 @@
+uuid: e730696b-836b-4da3-9a40-1dc51c80224a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.portfolio_countries.field_is_mena
+    - taxonomy.vocabulary.portfolio_countries
+  module:
+    - text
+id: taxonomy_term.portfolio_countries.default
+targetEntityType: taxonomy_term
+bundle: portfolio_countries
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_is_mena:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

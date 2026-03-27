@@ -1,0 +1,23 @@
+uuid: d03d2e0e-ba84-481a-b72d-2754f161d536
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.plp_download
+    - field.field.block_content.plp_download.field_plp_downloads
+id: block_content.plp_download.default
+targetEntityType: block_content
+bundle: plp_download
+mode: default
+content:
+  field_plp_downloads:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

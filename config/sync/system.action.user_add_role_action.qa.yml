@@ -1,0 +1,14 @@
+uuid: 059ef81a-3bc6-46f8-846d-a8b527e13447
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qa
+  module:
+    - user
+id: user_add_role_action.qa
+label: 'Add the QA role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: qa

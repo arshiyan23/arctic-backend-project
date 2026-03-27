@@ -1,0 +1,93 @@
+uuid: 01227533-507a-416d-a8e3-b5754389ffa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.a_closer_look
+    - paragraphs.paragraphs_type.address_contact_us
+    - paragraphs.paragraphs_type.details_of_achievements
+    - paragraphs.paragraphs_type.how_we_do_it_main
+    - paragraphs.paragraphs_type.intro_block
+    - paragraphs.paragraphs_type.map_markers
+    - paragraphs.paragraphs_type.our_strategic_approach
+    - paragraphs.paragraphs_type.startegic_approach_about_us
+    - paragraphs.paragraphs_type.title_description
+    - paragraphs.paragraphs_type.title_description_image
+    - paragraphs.paragraphs_type.video_gallery
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_sections
+field_name: field_sections
+entity_type: node
+bundle: landing_page
+label: Sections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      intro_block: intro_block
+      details_of_achievements: details_of_achievements
+      a_closer_look: a_closer_look
+      map_markers: map_markers
+      our_strategic_approach: our_strategic_approach
+      title_description: title_description
+      address_contact_us: address_contact_us
+      how_we_do_it_main: how_we_do_it_main
+      startegic_approach_about_us: startegic_approach_about_us
+      title_description_image: title_description_image
+      video_gallery: video_gallery
+    negate: 0
+    target_bundles_drag_drop:
+      a_closer_look:
+        weight: 8
+        enabled: true
+      address_contact_us:
+        weight: 19
+        enabled: true
+      counters:
+        weight: 4
+        enabled: false
+      details_of_achievements:
+        weight: 5
+        enabled: true
+      how_we_do_it_main:
+        weight: 21
+        enabled: true
+      icon_title_description:
+        weight: 22
+        enabled: false
+      intro_block:
+        weight: 2
+        enabled: true
+      map_markers:
+        weight: 9
+        enabled: true
+      marker:
+        weight: 10
+        enabled: false
+      our_strategic_approach:
+        weight: 12
+        enabled: true
+      startegic_approach_about_us:
+        weight: 26
+        enabled: true
+      title_description:
+        weight: 14
+        enabled: true
+      title_description_image:
+        weight: 26
+        enabled: true
+      video_gallery:
+        weight: 34
+        enabled: true
+      video_section:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

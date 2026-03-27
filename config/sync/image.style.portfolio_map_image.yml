@@ -1,0 +1,21 @@
+uuid: fe31f04f-5111-4775-ad2e-7409109c7ce6
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_map_image
+label: 'Portfolio Map Image'
+effects:
+  c62442ff-0a9f-4efb-a520-1bfc6974f37d:
+    uuid: c62442ff-0a9f-4efb-a520-1bfc6974f37d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 573
+      height: 501
+      anchor: center-center
+  948a509d-0f5d-461d-9df3-abe7f57f356f:
+    uuid: 948a509d-0f5d-461d-9df3-abe7f57f356f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

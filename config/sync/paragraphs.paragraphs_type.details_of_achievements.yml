@@ -1,0 +1,10 @@
+uuid: 4871a8ec-f427-4aab-ac59-a8ac1e36b554
+langcode: en
+status: true
+dependencies: {  }
+id: details_of_achievements
+label: 'Details of Achievements'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

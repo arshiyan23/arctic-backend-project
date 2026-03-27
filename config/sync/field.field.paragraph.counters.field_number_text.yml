@@ -1,0 +1,19 @@
+uuid: 3c5d2f97-38d0-43d8-96e2-217996b2ec92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_text
+    - paragraphs.paragraphs_type.counters
+id: paragraph.counters.field_number_text
+field_name: field_number_text
+entity_type: paragraph
+bundle: counters
+label: 'Number Text (Eg: Years of Experience)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

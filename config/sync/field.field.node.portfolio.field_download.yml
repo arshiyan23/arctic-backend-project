@@ -1,0 +1,29 @@
+uuid: 469a68ef-4b31-4eed-814d-641407032dd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download
+    - media.type.document
+    - node.type.portfolio
+id: node.portfolio.field_download
+field_name: field_download
+entity_type: node
+bundle: portfolio
+label: 'Download Arabic'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

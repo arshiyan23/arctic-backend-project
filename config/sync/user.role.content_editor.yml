@@ -1,0 +1,67 @@
+uuid: 5113c460-a942-4d40-9e79-4c30db3806d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.board_members
+    - node.type.landing_page
+    - node.type.news
+    - node.type.page
+    - node.type.portfolio
+    - taxonomy.vocabulary.tags
+  module:
+    - comment
+    - contextual
+    - file
+    - node
+    - path
+    - system
+    - taxonomy
+    - toolbar
+_core:
+  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create board_members content'
+  - 'create landing_page content'
+  - 'create news content'
+  - 'create page content'
+  - 'create portfolio content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete article revisions'
+  - 'delete board_members revisions'
+  - 'delete landing_page revisions'
+  - 'delete news revisions'
+  - 'delete own article content'
+  - 'delete own board_members content'
+  - 'delete own files'
+  - 'delete own landing_page content'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own portfolio content'
+  - 'delete page revisions'
+  - 'delete portfolio revisions'
+  - 'edit own article content'
+  - 'edit own board_members content'
+  - 'edit own comments'
+  - 'edit own landing_page content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own portfolio content'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

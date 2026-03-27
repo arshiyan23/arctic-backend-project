@@ -1,0 +1,10 @@
+uuid: 10396431-214a-4399-a4d0-48be3507716f
+langcode: en
+status: true
+dependencies: {  }
+id: policy_content
+label: 'Policy Content'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,24 @@
+uuid: 560418a8-8274-4af7-9cab-e1a8668be24e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order
+    - node.type.board_members
+  module:
+    - weight
+id: node.board_members.field_order
+field_name: field_order
+entity_type: node
+bundle: board_members
+label: Order
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

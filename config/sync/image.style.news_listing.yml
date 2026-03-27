@@ -1,0 +1,21 @@
+uuid: 794b7694-78c2-4023-ad29-4155d418da52
+langcode: en
+status: true
+dependencies: {  }
+name: news_listing
+label: 'News Listing'
+effects:
+  74bf0a2f-60ce-4417-8910-7c7857eaae25:
+    uuid: 74bf0a2f-60ce-4417-8910-7c7857eaae25
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 850
+      height: 420
+      anchor: center-top
+  553e46be-7386-48ab-8a6f-68a5dffd021f:
+    uuid: 553e46be-7386-48ab-8a6f-68a5dffd021f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

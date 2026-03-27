@@ -1,0 +1,6 @@
+name: 'Artic'
+type: theme
+description: 'Custom theme based on Olivero'
+core_version_requirement: ^10
+base theme: olivero
+logo: logo.svg

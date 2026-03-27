@@ -1,0 +1,19 @@
+uuid: a1c94364-91c5-4927-b4f6-90bb32b6daca
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.investment_portfolio
+    - field.storage.block_content.field_summary_of_hotel_rooms
+id: block_content.investment_portfolio.field_summary_of_hotel_rooms
+field_name: field_summary_of_hotel_rooms
+entity_type: block_content
+bundle: investment_portfolio
+label: 'Summary of hotel rooms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

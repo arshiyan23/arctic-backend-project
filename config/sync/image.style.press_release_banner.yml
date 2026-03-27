@@ -1,0 +1,21 @@
+uuid: c6b37e86-344f-4a98-b627-5e77c8e3de4e
+langcode: en
+status: true
+dependencies: {  }
+name: press_release_banner
+label: 'Press Release Banner 1147×656'
+effects:
+  ae1a9fa9-7265-4b61-ad27-1ab63120a757:
+    uuid: ae1a9fa9-7265-4b61-ad27-1ab63120a757
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1147
+      height: 656
+      anchor: center-top
+  84801ddb-dee9-478b-b871-4badb68fb5c0:
+    uuid: 84801ddb-dee9-478b-b871-4badb68fb5c0
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

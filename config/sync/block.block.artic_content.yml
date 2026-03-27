@@ -1,0 +1,22 @@
+uuid: 022a9248-bf9e-4bac-a85b-857e4bad3299
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - artic
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: artic_content
+theme: artic
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

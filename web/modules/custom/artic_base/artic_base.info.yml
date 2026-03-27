@@ -1,0 +1,6 @@
+name: Artic Base 
+description: Handle base functions.
+package: "Artic Base Custom"
+
+type: module
+core_version_requirement: ^10

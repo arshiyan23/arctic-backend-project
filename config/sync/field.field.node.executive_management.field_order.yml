@@ -1,0 +1,24 @@
+uuid: 8a3854de-dc1d-4202-a7f8-d0320470b7ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_order
+    - node.type.executive_management
+  module:
+    - weight
+id: node.executive_management.field_order
+field_name: field_order
+entity_type: node
+bundle: executive_management
+label: Order
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

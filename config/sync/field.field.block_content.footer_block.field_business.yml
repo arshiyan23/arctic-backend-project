@@ -1,0 +1,19 @@
+uuid: 73b47353-4e8d-4a87-a744-49815077e72a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_business
+id: block_content.footer_block.field_business
+field_name: field_business
+entity_type: block_content
+bundle: footer_block
+label: Business
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,44 @@
+uuid: ca700a56-67d1-4cee-b569-5ffb253b6472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_gallery.field_short_description
+    - field.field.paragraph.video_gallery.field_video_section
+    - paragraphs.paragraphs_type.video_gallery
+  module:
+    - paragraphs
+id: paragraph.video_gallery.default
+targetEntityType: paragraph
+bundle: video_gallery
+mode: default
+content:
+  field_short_description:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_video_section:
+    type: paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

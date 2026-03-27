@@ -1,0 +1,29 @@
+uuid: 8f4944d4-7442-41e8-9df1-3299fbaf858a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.supply_chain
+    - field.storage.block_content.field_supply_image
+    - media.type.image
+id: block_content.supply_chain.field_supply_image
+field_name: field_supply_image
+entity_type: block_content
+bundle: supply_chain
+label: 'supply image '
+description: 'Minimum Size: 1119×680'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

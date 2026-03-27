@@ -1,0 +1,9 @@
+uuid: b3668e31-db61-4bf7-a1aa-90038e5f4e4c
+langcode: en
+status: true
+dependencies: {  }
+id: node__portfolio
+label: 'Content: Portfolio'
+tags:
+  description: '[node:title]'
+  title: '[node:title] | [site:name]'

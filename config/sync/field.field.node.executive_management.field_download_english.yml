@@ -1,0 +1,29 @@
+uuid: e1ee9efd-0d81-457b-979a-b9134e3ef9d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download_english
+    - media.type.document
+    - node.type.executive_management
+id: node.executive_management.field_download_english
+field_name: field_download_english
+entity_type: node
+bundle: executive_management
+label: 'Download English'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

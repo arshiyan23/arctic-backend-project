@@ -1,0 +1,19 @@
+uuid: cca29a40-5aaa-4af3-9fc6-b45928f12df8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hwd_description_2
+    - paragraphs.paragraphs_type.how_we_do_it_main
+id: paragraph.how_we_do_it_main.field_hwd_description_2
+field_name: field_hwd_description_2
+entity_type: paragraph
+bundle: how_we_do_it_main
+label: 'Description 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

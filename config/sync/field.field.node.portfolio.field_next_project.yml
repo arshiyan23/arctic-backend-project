@@ -1,0 +1,28 @@
+uuid: 9b4f5576-13d4-44ca-a9ed-216385ca4690
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_project
+    - node.type.portfolio
+id: node.portfolio.field_next_project
+field_name: field_next_project
+entity_type: node
+bundle: portfolio
+label: 'Next project'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      portfolio: portfolio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

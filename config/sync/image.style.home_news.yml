@@ -1,0 +1,21 @@
+uuid: 279d258f-2979-4236-a619-1c1fbdab8b00
+langcode: en
+status: true
+dependencies: {  }
+name: home_news
+label: 'Home News 400x200'
+effects:
+  b386d2ce-bac8-44ee-a4b3-b52eca7a744c:
+    uuid: b386d2ce-bac8-44ee-a4b3-b52eca7a744c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 200
+      anchor: center-top
+  374544f1-d2d1-4f87-9b0c-9cbad7dbc09b:
+    uuid: 374544f1-d2d1-4f87-9b0c-9cbad7dbc09b
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

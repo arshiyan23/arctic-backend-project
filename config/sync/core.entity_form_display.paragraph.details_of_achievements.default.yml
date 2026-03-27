@@ -1,0 +1,37 @@
+uuid: 10fccd60-66fb-4b17-ae48-c7e17b07158a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.details_of_achievements.field_data_details
+    - paragraphs.paragraphs_type.details_of_achievements
+  module:
+    - paragraphs
+id: paragraph.details_of_achievements.default
+targetEntityType: paragraph
+bundle: details_of_achievements
+mode: default
+content:
+  field_data_details:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: counters
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

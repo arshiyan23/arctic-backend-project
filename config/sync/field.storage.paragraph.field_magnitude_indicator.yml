@@ -1,0 +1,21 @@
+uuid: 84a5a0bb-ee91-4101-9274-9b4f6cafcaf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_magnitude_indicator
+field_name: field_magnitude_indicator
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

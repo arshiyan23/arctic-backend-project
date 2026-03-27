@@ -1,0 +1,144 @@
+uuid: a1e0e315-96bd-42d7-8088-d7dc5fe716ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.marker
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    default_include:
+      - field_image.field_media_image
+    page_limit: 50
+id: paragraph--marker
+disabled: false
+path: paragraph/marker
+resourceType: paragraph--marker
+resourceFields:
+  id:
+    disabled: true
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: true
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  parent_id:
+    disabled: true
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+  parent_type:
+    disabled: true
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+  parent_field_name:
+    disabled: true
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+  behavior_settings:
+    disabled: true
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_city_name:
+    disabled: false
+    fieldName: field_city_name
+    publicName: field_city_name
+    enhancer:
+      id: ''
+  field_country:
+    disabled: false
+    fieldName: field_country
+    publicName: field_country
+    enhancer:
+      id: ''
+  field_image:
+    disabled: false
+    fieldName: field_image
+    publicName: field_image
+    enhancer:
+      id: ''
+  field_latitude:
+    disabled: false
+    fieldName: field_latitude
+    publicName: field_latitude
+    enhancer:
+      id: ''
+  field_longitude:
+    disabled: false
+    fieldName: field_longitude
+    publicName: field_longitude
+    enhancer:
+      id: ''
+  field_property_name:
+    disabled: false
+    fieldName: field_property_name
+    publicName: field_property_name
+    enhancer:
+      id: ''
+  field_website_link:
+    disabled: false
+    fieldName: field_website_link
+    publicName: field_website_link
+    enhancer:
+      id: ''

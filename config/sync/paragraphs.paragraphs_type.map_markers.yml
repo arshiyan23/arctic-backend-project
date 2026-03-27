@@ -1,0 +1,10 @@
+uuid: 981f9b0e-5a2d-462a-a29a-3417e0f3ae01
+langcode: en
+status: true
+dependencies: {  }
+id: map_markers
+label: 'Map Markers'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

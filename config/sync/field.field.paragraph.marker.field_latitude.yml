@@ -1,0 +1,19 @@
+uuid: 26048c88-f71d-4296-bcfe-a3e0385f5016
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_latitude
+    - paragraphs.paragraphs_type.marker
+id: paragraph.marker.field_latitude
+field_name: field_latitude
+entity_type: paragraph
+bundle: marker
+label: Latitude
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,60 @@
+uuid: 8b83d239-de69-49b6-93c1-e7f24fce6a4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a_closer_look.field_a_closer_look_lists
+    - field.field.paragraph.a_closer_look.field_big_image
+    - field.field.paragraph.a_closer_look.field_no_of_regions
+    - field.field.paragraph.a_closer_look.field_regions_title
+    - field.field.paragraph.a_closer_look.field_small_image
+    - paragraphs.paragraphs_type.a_closer_look
+id: paragraph.a_closer_look.default
+targetEntityType: paragraph
+bundle: a_closer_look
+mode: default
+content:
+  field_a_closer_look_lists:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_big_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_no_of_regions:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_regions_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_small_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

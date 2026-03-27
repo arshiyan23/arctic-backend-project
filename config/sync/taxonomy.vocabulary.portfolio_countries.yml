@@ -1,0 +1,8 @@
+uuid: df233bb9-3c38-4de4-94fc-55f831185c47
+langcode: en
+status: true
+dependencies: {  }
+name: 'Portfolio Countries'
+vid: portfolio_countries
+description: ''
+weight: 0

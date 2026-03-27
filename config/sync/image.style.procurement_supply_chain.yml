@@ -1,0 +1,21 @@
+uuid: 4326ad5c-ca8c-4b67-9cbd-53f6a8fa3c69
+langcode: en
+status: true
+dependencies: {  }
+name: procurement_supply_chain
+label: 'Procurement Supply Chain 780×320'
+effects:
+  c0f30233-6374-4a98-ab23-6aba6170bada:
+    uuid: c0f30233-6374-4a98-ab23-6aba6170bada
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 780
+      height: 320
+      anchor: center-center
+  6c9aa196-1e76-441f-b909-9ae8e0cef5c8:
+    uuid: 6c9aa196-1e76-441f-b909-9ae8e0cef5c8
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

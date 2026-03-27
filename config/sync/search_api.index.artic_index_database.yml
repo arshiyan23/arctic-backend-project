@@ -1,0 +1,114 @@
+uuid: f908f564-c8c1-4902-96b8-e5bd7aaa90b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_download
+    - field.storage.node.field_download_english
+    - field.storage.node.field_search_filter
+    - search_api.server.artic_server_database
+  module:
+    - media
+    - taxonomy
+    - node
+    - search_api
+id: artic_index_database
+name: 'Artic Index Database'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  name:
+    label: 'Download Arabic » Media » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_download:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_download
+      module:
+        - media
+  name_1:
+    label: 'Download English » Media » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_download_english:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_download_english
+      module:
+        - media
+  name_2:
+    label: 'Search Filter » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_search_filter:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_search_filter
+      module:
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: false
+    fields:
+      - body
+      - name
+      - name_1
+      - name_2
+      - title
+  language_with_fallback: {  }
+  rendered_item: {  }
+  tokenizer:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+    all_fields: false
+    fields:
+      - body
+      - name
+      - name_1
+      - title
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: artic_server_database

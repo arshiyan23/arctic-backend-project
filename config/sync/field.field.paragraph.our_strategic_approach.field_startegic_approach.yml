@@ -1,0 +1,19 @@
+uuid: 5350c962-15cb-47ba-a2ad-21854d6c9f30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_startegic_approach
+    - paragraphs.paragraphs_type.our_strategic_approach
+id: paragraph.our_strategic_approach.field_startegic_approach
+field_name: field_startegic_approach
+entity_type: paragraph
+bundle: our_strategic_approach
+label: 'startegic approach'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

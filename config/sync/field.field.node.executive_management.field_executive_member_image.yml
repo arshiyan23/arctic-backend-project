@@ -1,0 +1,29 @@
+uuid: 5f2f103e-8afc-4fb7-a350-9c5dffc08264
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_executive_member_image
+    - media.type.image
+    - node.type.executive_management
+id: node.executive_management.field_executive_member_image
+field_name: field_executive_member_image
+entity_type: node
+bundle: executive_management
+label: 'Executive Member Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

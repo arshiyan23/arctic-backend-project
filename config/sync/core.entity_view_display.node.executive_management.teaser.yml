@@ -1,0 +1,49 @@
+uuid: 0b949b41-cc83-4231-929b-865c6f56978d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.executive_management.body
+    - field.field.node.executive_management.field_designation
+    - field.field.node.executive_management.field_download
+    - field.field.node.executive_management.field_download_english
+    - field.field.node.executive_management.field_download_to_learn_more
+    - field.field.node.executive_management.field_executive_member_image
+    - field.field.node.executive_management.field_executive_member_name
+    - field.field.node.executive_management.field_order
+    - field.field.node.executive_management.field_popup_data
+    - field.field.node.executive_management.field_search_filter
+    - node.type.executive_management
+  module:
+    - text
+    - user
+id: node.executive_management.teaser
+targetEntityType: node
+bundle: executive_management
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_designation: true
+  field_download: true
+  field_download_english: true
+  field_download_to_learn_more: true
+  field_executive_member_image: true
+  field_executive_member_name: true
+  field_order: true
+  field_popup_data: true
+  field_search_filter: true
+  search_api_excerpt: true

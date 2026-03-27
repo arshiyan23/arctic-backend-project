@@ -1,0 +1,23 @@
+uuid: 622e261c-f42b-4976-a68c-5ec7ae531141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_website_link
+    - paragraphs.paragraphs_type.marker
+  module:
+    - link
+id: paragraph.marker.field_website_link
+field_name: field_website_link
+entity_type: paragraph
+bundle: marker
+label: 'Website Link'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

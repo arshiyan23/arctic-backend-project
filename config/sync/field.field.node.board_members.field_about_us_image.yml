@@ -1,0 +1,29 @@
+uuid: 1c96a82a-31fb-4ae3-b368-94419d96feab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_us_image
+    - media.type.image
+    - node.type.board_members
+id: node.board_members.field_about_us_image
+field_name: field_about_us_image
+entity_type: node
+bundle: board_members
+label: 'BOARD MEMBERS section image'
+description: 'Minimum Size: 438×479'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: 52a39c77-80a9-49a5-bfd7-d7075b8b6873
+langcode: en
+status: true
+dependencies: {  }
+id: icon_title_description
+label: 'Icon, Title, & Desc - (About us, Sustainability)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

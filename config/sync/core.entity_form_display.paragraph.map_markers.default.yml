@@ -1,0 +1,37 @@
+uuid: a56d8ff5-760c-4057-87ce-9677cb6d7b5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_markers.field_map_markers_data
+    - paragraphs.paragraphs_type.map_markers
+  module:
+    - paragraphs
+id: paragraph.map_markers.default
+targetEntityType: paragraph
+bundle: map_markers
+mode: default
+content:
+  field_map_markers_data:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: marker
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

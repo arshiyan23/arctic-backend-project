@@ -1,0 +1,118 @@
+uuid: 602d099c-bd98-4dc2-a2b2-da24d113cab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.startegic_approach_about_us
+  module:
+    - jsonapi_defaults
+third_party_settings:
+  jsonapi_defaults:
+    page_limit: 50
+id: paragraph--startegic_approach_about_us
+disabled: false
+path: paragraph/startegic_approach_about_us
+resourceType: paragraph--startegic_approach_about_us
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: true
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  parent_id:
+    disabled: false
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+  parent_type:
+    disabled: true
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+  parent_field_name:
+    disabled: true
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+  behavior_settings:
+    disabled: true
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  field_left_title_about:
+    disabled: false
+    fieldName: field_left_title_about
+    publicName: field_left_title_about
+    enhancer:
+      id: ''
+  field_startegic_approach_about:
+    disabled: false
+    fieldName: field_startegic_approach_about
+    publicName: field_startegic_approach_about
+    enhancer:
+      id: ''
+  field_title_aboutus:
+    disabled: false
+    fieldName: field_title_aboutus
+    publicName: field_title_aboutus
+    enhancer:
+      id: ''

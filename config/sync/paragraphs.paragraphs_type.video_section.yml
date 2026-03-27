@@ -1,0 +1,10 @@
+uuid: 7a613d05-f818-4f23-8e9e-8907f4e813e8
+langcode: en
+status: true
+dependencies: {  }
+id: video_section
+label: 'Video Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

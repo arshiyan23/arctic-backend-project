@@ -1,0 +1,22 @@
+uuid: 46ac1852-f3be-4590-87cd-163689cf4943
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.landing_page
+    - node.type.portfolio
+  module:
+    - node
+id: qa
+label: QA
+weight: 5
+is_admin: null
+permissions:
+  - 'create landing_page content'
+  - 'create portfolio content'
+  - 'delete own landing_page content'
+  - 'delete own portfolio content'
+  - 'edit any landing_page content'
+  - 'edit any portfolio content'
+  - 'edit own landing_page content'
+  - 'edit own portfolio content'

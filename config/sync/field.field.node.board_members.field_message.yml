@@ -1,0 +1,19 @@
+uuid: dfe8206f-5131-4c6d-8ac9-08864f7ed88a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_message
+    - node.type.board_members
+id: node.board_members.field_message
+field_name: field_message
+entity_type: node
+bundle: board_members
+label: Message
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

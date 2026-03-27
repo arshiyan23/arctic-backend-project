@@ -1,0 +1,19 @@
+uuid: 7f4427e4-a7a9-431e-a644-b0a0a59ea225
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_hotels_column_3
+field_name: field_hotels_column_3
+entity_type: block_content
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 0094c42a-5698-4a77-81ff-48f299981f1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_career
+field_name: field_career
+entity_type: block_content
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

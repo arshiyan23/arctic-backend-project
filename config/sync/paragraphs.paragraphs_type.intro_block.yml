@@ -1,0 +1,10 @@
+uuid: d3ffb283-4287-4241-b2be-929e6edc1636
+langcode: en
+status: true
+dependencies: {  }
+id: intro_block
+label: 'Intro block'
+icon_uuid: null
+icon_default: null
+description: "This block gives a quick introduction to what the page is about. It has a title, a short description, and a button to do something, like 'Learn More' or 'Get Started'. "
+behavior_plugins: {  }

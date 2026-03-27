@@ -1,0 +1,19 @@
+uuid: 49b4efab-4937-4b3e-b6f1-6f895395cabd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_sub_title
+    - node.type.landing_page
+id: node.landing_page.field_banner_sub_title
+field_name: field_banner_sub_title
+entity_type: node
+bundle: landing_page
+label: 'Banner Sub Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

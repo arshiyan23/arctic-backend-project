@@ -1,0 +1,29 @@
+uuid: 5714c3e5-8313-46b1-b629-f5e73544cf48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_download_english
+    - media.type.document
+    - node.type.page
+id: node.page.field_download_english
+field_name: field_download_english
+entity_type: node
+bundle: page
+label: 'Download English'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

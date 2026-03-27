@@ -1,0 +1,21 @@
+uuid: 7070a1d9-27b1-403b-b081-951b3c593798
+langcode: en
+status: true
+dependencies: {  }
+name: sustainability_banner
+label: 'sustainability banner 1119×900'
+effects:
+  7c6fcfb6-830c-4a75-93f9-b94eedb89cc2:
+    uuid: 7c6fcfb6-830c-4a75-93f9-b94eedb89cc2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1119
+      height: 900
+      anchor: center-center
+  3b8f2085-deaf-400e-86c6-1b8830b73ae4:
+    uuid: 3b8f2085-deaf-400e-86c6-1b8830b73ae4
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

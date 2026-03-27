@@ -1,0 +1,19 @@
+uuid: 33cf7df0-63ee-4988-939c-b4d5dba225eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.supply_chain
+    - field.storage.block_content.field_supply_title
+id: block_content.supply_chain.field_supply_title
+field_name: field_supply_title
+entity_type: block_content
+bundle: supply_chain
+label: 'Supply Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

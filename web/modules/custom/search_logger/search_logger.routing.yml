@@ -1,0 +1,23 @@
+search_logger.jsonapi_top_searches:
+  path: '/jsonapi/top-searches/{keyword}'
+  defaults:
+    _controller: '\Drupal\search_logger\Controller\SearchLoggerController::topSearches'
+    _title: 'Top Searches'
+  requirements:
+    _permission: 'access search logger api'
+    keyword: '.+'
+  options:
+    _auth: ['basic_auth', 'cookie']
+  methods: [GET]
+
+search_logger.jsonapi_recent_searches:
+  path: '/jsonapi/recent-searches/{keyword}'
+  defaults:
+    _controller: '\Drupal\search_logger\Controller\SearchLoggerController::recentSearches'
+    _title: 'Recent Searches'
+  requirements:
+    _permission: 'access search logger api'
+    keyword: '.+'
+  options:
+    _auth: ['basic_auth', 'cookie']
+  methods: [GET]

@@ -1,0 +1,21 @@
+uuid: bd35a947-ca99-4016-a5e5-d994ed1be37d
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_left_image
+label: 'Portfolio Left Image 870×707'
+effects:
+  5aadfa48-4352-40c2-ba33-29a2008ccc1c:
+    uuid: 5aadfa48-4352-40c2-ba33-29a2008ccc1c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 870
+      height: 707
+      anchor: center-center
+  8411c8c1-f488-4c38-bc4e-00e73cab9e5f:
+    uuid: 8411c8c1-f488-4c38-bc4e-00e73cab9e5f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

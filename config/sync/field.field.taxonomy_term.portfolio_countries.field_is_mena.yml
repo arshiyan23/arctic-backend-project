@@ -1,0 +1,23 @@
+uuid: 0b401779-0f60-4bba-8d34-2e8f43cacd33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_is_mena
+    - taxonomy.vocabulary.portfolio_countries
+id: taxonomy_term.portfolio_countries.field_is_mena
+field_name: field_is_mena
+entity_type: taxonomy_term
+bundle: portfolio_countries
+label: 'IS MENA'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
