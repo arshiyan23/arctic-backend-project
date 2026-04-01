@@ -1,7 +1,7 @@
 name: 'Search Logger'
 type: module
 description: 'Logs search queries and provides JSON:API endpoints for top searches.'
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 package: Custom
 dependencies:
   - jsonapi:jsonapi
