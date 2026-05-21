@@ -1,22 +1,17 @@
 # gitignore template for Drupal 8 projects
-#
-# earlier versions of Drupal are tracked in `community/PHP/`
-#
-# follows official upstream conventions:
-# https://www.drupal.org/docs/develop/using-composer
 
-# Ignore configuration files that may contain sensitive information
-/web/sites/*/*settings*.php
-/web/sites/*/*services*.yml
+# Ignore local settings files (may contain secrets)
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
 
-# Ignore paths that may contain user-generated content
-/web/sites/*/files
+# Ignore paths with user-generated content
+/web/sites/*/files/
 /web/sites/*/public
 /web/sites/*/private
 /web/sites/*/files-public
 /web/sites/*/files-private
 
-# Ignore paths that may contain temporary files
+# Ignore temporary files
 /web/sites/*/translations
 /web/sites/*/tmp
 /web/sites/*/cache
@@ -67,4 +62,8 @@
 
 # Ignore keys
 /keys
-web/sites/default/Files/
+
+# Ignore database dumps
+backup.sql*
+*.zip
+*.gz
