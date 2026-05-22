@@ -99,7 +99,7 @@ resourceFields:
     enhancer:
       id: ''
   created:
-    disabled: true
+    disabled: false
     fieldName: created
     publicName: created
     enhancer:
