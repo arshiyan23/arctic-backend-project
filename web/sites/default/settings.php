@@ -923,6 +923,6 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
   ];
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
-  $settings['config_sync_directory'] = 'sites/default/files/sync';
+  $settings['config_sync_directory'] = '../config/sync';
   $settings['cors.config']['enabled'] = FALSE;
 }
