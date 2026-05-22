@@ -4,11 +4,13 @@ if (isset($_GET['boot'])) {
   $autoloader = require __DIR__ . '/web/autoload.php';
   $kernel = new Drupal\Core\DrupalKernel('prod', $autoloader);
   try {
+    $kernel->setSitePath('sites/default');
+    chdir(__DIR__ . '/web');
     $kernel->boot();
     echo "Drupal booted successfully!\n";
     echo "Container rebuilt.\n";
   } catch (Exception $e) {
-    echo "Boot error: " . $e->getMessage() . "\n";
+    echo "Error: " . $e->getMessage() . "\n";
   }
   return;
 }
