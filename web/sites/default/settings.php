@@ -924,5 +924,15 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
   $settings['config_sync_directory'] = '../config/sync';
+  $settings['cors.config'] = [
+    'enabled' => TRUE,
+    'allowedHeaders' => ['authorization', 'content-type', 'accept', 'origin', 'x-requested-with'],
+    'allowedMethods' => ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+    'allowedOrigins' => ['https://mango-glacier-02c132300.7.azurestaticapps.net', 'http://localhost:3001', 'http://localhost:3000'],
+    'allowedOriginsPatterns' => [],
+    'exposedHeaders' => FALSE,
+    'maxAge' => 86400,
+    'supportsCredentials' => FALSE,
+  ];
   $config['jsonapi_extras.jsonapi_resource_config.node--portfolio']['resourceFields']['created']['disabled'] = FALSE;
 }
