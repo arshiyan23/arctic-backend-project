@@ -1,27 +1,58 @@
 <?php
-$pdo = new PDO('mysql:host='.(getenv('DATABASE_HOST')?:'artic-mysql.mysql.database.azure.com').';port=3306;dbname='.(getenv('DATABASE_NAME')?:'artcwbsv0007-prod'), getenv('DATABASE_USER')?:'articadmin', getenv('DATABASE_PASSWORD')?:'iamAk@00@000');
-if (isset($_GET['r'])) {
-  header('Content-Type: text/plain');
-  try {
-    // Remove all config entries with fieldable_path references
-    $names = $pdo->query("SELECT name, data FROM config WHERE data LIKE '%fieldable_path%' OR name LIKE '%field_path%'");
-    $deleted = [];
-    foreach ($names as $row) {
-      if ($row['name'] == 'core.extension') {
-        // Remove fieldable_path from module list
-        $data = unserialize($row['data']);
-        unset($data['module']['fieldable_path']);
-        $new = serialize($data);
-        $pdo->prepare("UPDATE config SET data = :data WHERE name = :name")->execute([':data' => $new, ':name' => 'core.extension']);
-        $deleted[] = $row['name'].' (removed module)';
-      } else {
-        $pdo->prepare("DELETE FROM config WHERE name = :name")->execute([':name' => $row['name']]);
-        $deleted[] = $row['name'];
+$corsOrigin = 'https://mango-glacier-02c132300.7.azurestaticapps.net';
+if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] === $corsOrigin) {
+  header('Access-Control-Allow-Origin: ' . $corsOrigin);
+  header('Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS');
+  header('Access-Control-Allow-Headers: authorization, content-type, accept, origin, x-requested-with');
+  header('Access-Control-Max-Age: 86400');
+  if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    return;
+  }
+}
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '';
+$filesPrefix = '/index.php/sites/default/files/';
+if (str_starts_with($requestPath, $filesPrefix)) {
+  $relativePath = substr($requestPath, strlen($filesPrefix));
+  if (str_starts_with($relativePath, 'styles/')) {
+    $parts = explode('/public/', $relativePath, 2);
+    if (count($parts) === 2) {
+      $relativePath = $parts[1];
+      if (str_ends_with($relativePath, '.webp')) {
+        $relativePath = substr($relativePath, 0, -5);
       }
     }
-    echo implode("\n", $deleted)."\n";
-    echo count($deleted)." entries cleaned\n";
-  } catch (Exception $e) { echo "Error: ".$e->getMessage()."\n"; }
+  }
+
+  $relativePath = rawurldecode($relativePath);
+  if (!str_contains($relativePath, '..')) {
+    $filePath = __DIR__ . '/web/sites/default/files/' . $relativePath;
+    if (is_file($filePath)) {
+      $contentType = mime_content_type($filePath) ?: 'application/octet-stream';
+      header('Content-Type: ' . $contentType);
+      header('Content-Length: ' . filesize($filePath));
+      readfile($filePath);
+      return;
+    }
+  }
+}
+
+$pdo = new PDO('mysql:host='.(getenv('DATABASE_HOST')?:'artic-mysql.mysql.database.azure.com').';port=3306;dbname='.(getenv('DATABASE_NAME')?:'artcwbsv0007-prod'), getenv('DATABASE_USER')?:'articadmin', getenv('DATABASE_PASSWORD')?:'iamAk@00@000');
+if (isset($_GET['files'])) {
+  header('Content-Type: text/plain');
+  $check = isset($_GET['check']);
+  $found = 0; $missing = 0;
+  $stmt = $pdo->query("SELECT uri, filesize, filename FROM file_managed ORDER BY uri");
+  foreach ($stmt as $r) {
+    $rel = str_replace('public://', '', $r['uri']);
+    $path = '/home/site/wwwroot/web/sites/default/files/' . $rel;
+    if ($check) {
+      if (file_exists($path)) { $found++; } else { $missing++; echo "MISS: $rel\n"; }
+    } else {
+      echo $r['uri']."\t".$r['filesize']."\t".$r['filename']."\n";
+    }
+  }
+  if ($check) echo "\nFound: $found, Missing: $missing\n";
   return;
 }
 if (isset($_GET['cr'])) {
@@ -38,17 +69,7 @@ if (isset($_GET['cr'])) {
     echo "Booted ".Drupal::VERSION."\n";
     Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
     echo "Rebuilt\n";
-  } catch (Exception $e) { echo "Error: ".$e->getMessage()."\n"; }
-  return;
-}
-if (isset($_GET['q'])) {
-  header('Content-Type: text/plain');
-  try {
-    $name = $_GET['q'];
-    // Search in config table
-    $stmt = $pdo->query("SELECT name, collection, LEFT(data,200) as data FROM config WHERE name LIKE '%$name%' OR data LIKE '%$name%'");
-    foreach ($stmt as $row) { echo $row['name']." [".$row['collection']."] ".$row['data']."\n\n"; }
-  } catch (Exception $e) { echo "Error: ".$e->getMessage()."\n"; }
+  } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
 chdir(__DIR__.'/web');
