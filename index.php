@@ -60,7 +60,17 @@ if (isset($_GET['cr'])) {
   try {
     $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
     echo "Users:\n";
-    foreach ($users as $u) { echo "  {$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
+    foreach ($users as $u) { echo "  uid={$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
+    $anonPerms = $pdo->query("SELECT permission FROM role_permission WHERE rid='anonymous'")->fetchAll(PDO::FETCH_COLUMN);
+    echo "Anonymous permissions: " . implode(', ', $anonPerms) . "\n";
+    if (!in_array('access content', $anonPerms)) {
+      $pdo->exec("INSERT INTO role_permission (rid, permission) VALUES ('anonymous', 'access content')");
+      echo "Granted: access content\n";
+    }
+    if (!in_array('view media', $anonPerms)) {
+      $pdo->exec("INSERT INTO role_permission (rid, permission) VALUES ('anonymous', 'view media')");
+      echo "Granted: view media\n";
+    }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
