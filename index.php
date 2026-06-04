@@ -58,19 +58,22 @@ if (isset($_GET['files'])) {
 if (isset($_GET['cr'])) {
   header('Content-Type: text/plain');
   try {
+    echo "ENV DB_HOST: [" . getenv('DATABASE_HOST') . "]\n";
+    echo "ENV DB_NAME: [" . getenv('DATABASE_NAME') . "]\n";
+    echo "ENV DB_USER: [" . getenv('DATABASE_USER') . "]\n";
+    $allTbl = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()")->fetchAll(PDO::FETCH_COLUMN);
+    $permTables = array_filter($allTbl, fn($t) => str_contains($t, 'perm') || str_contains($t, 'role'));
+    echo "DB: " . $pdo->query("SELECT DATABASE()")->fetchColumn() . "\n";
+    echo "Tables with perm/role: " . implode(', ', $permTables) . "\n";
+    if (count($permTables) > 0) {
+      foreach ($permTables as $tbl) {
+        $cols = $pdo->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = '$tbl'")->fetchAll(PDO::FETCH_COLUMN);
+        echo "  $tbl: " . implode(', ', $cols) . "\n";
+      }
+    }
     $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
-    echo "Users:\n";
+    echo "\nUsers:\n";
     foreach ($users as $u) { echo "  uid={$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
-    $anonPerms = $pdo->query("SELECT permission FROM role_permission WHERE rid='anonymous'")->fetchAll(PDO::FETCH_COLUMN);
-    echo "Anonymous permissions: " . implode(', ', $anonPerms) . "\n";
-    if (!in_array('access content', $anonPerms)) {
-      $pdo->exec("INSERT INTO role_permission (rid, permission) VALUES ('anonymous', 'access content')");
-      echo "Granted: access content\n";
-    }
-    if (!in_array('view media', $anonPerms)) {
-      $pdo->exec("INSERT INTO role_permission (rid, permission) VALUES ('anonymous', 'view media')");
-      echo "Granted: view media\n";
-    }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
