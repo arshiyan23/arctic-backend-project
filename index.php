@@ -73,12 +73,5 @@ if (isset($_GET['cr'])) {
   return;
 }
 
-$authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ?? '';
-$apiArticKey = 'Basic YXBpYXJ0aWM6Q044Wk1XUEEwemJm';
-if ($authHeader === $apiArticKey) {
-  $_SERVER['PHP_AUTH_USER'] = 'apiadminG3h7R';
-  $_SERVER['PHP_AUTH_PW'] = 'P#2s6Lj@9E!q';
-  unset($_SERVER['HTTP_AUTHORIZATION'], $_SERVER['REDIRECT_HTTP_AUTHORIZATION']);
-}
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
