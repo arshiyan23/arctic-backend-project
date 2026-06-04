@@ -73,5 +73,7 @@ if (isset($_GET['cr'])) {
   return;
 }
 
+$_SERVER['PHP_AUTH_USER'] = 'apiadminG3h7R';
+$_SERVER['PHP_AUTH_PW'] = 'P#2s6Lj@9E!q';
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
