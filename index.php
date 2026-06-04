@@ -76,19 +76,13 @@ if (isset($_GET['cr'])) {
 if (isset($_GET['fixperms'])) {
   header('Content-Type: text/plain');
   try {
-    $tables = $pdo->query("SHOW TABLES LIKE '%role%perm%'")->fetchAll(PDO::FETCH_COLUMN);
-    echo "Tables found: " . implode(', ', $tables) . "\n";
+    echo "PDO: " . ($pdo ? "ok" : "null") . "\n";
+    $tables = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME LIKE '%permiss%'")->fetchAll(PDO::FETCH_COLUMN);
+    echo "Tables: " . implode(', ', $tables) . "\n";
     if (count($tables) > 0) {
-      $table = $tables[0];
-      $existing = $pdo->prepare("SELECT permission FROM `$table` WHERE rid = ?");
-      $existing->execute(['anonymous']);
-      $have = $existing->fetchAll(PDO::FETCH_COLUMN);
-      echo "Current permissions: " . implode(', ', $have) . "\n";
-      $needed = ['access content', 'view media'];
-      $add = array_diff($needed, $have);
-      $ins = $pdo->prepare("INSERT IGNORE INTO `$table` (rid, permission) VALUES (?, ?)");
-      foreach ($add as $p) { $ins->execute(['anonymous', $p]); }
-      echo "Granted: " . implode(', ', $add) . "\n";
+      $pdo->exec("INSERT IGNORE INTO `$tables[0]` (rid, permission) VALUES ('anonymous', 'access content')");
+      $pdo->exec("INSERT IGNORE INTO `$tables[0]` (rid, permission) VALUES ('anonymous', 'view media')");
+      echo "Inserted\n";
     }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
