@@ -77,11 +77,17 @@ if (isset($_GET['fixperms'])) {
   header('Content-Type: text/plain');
   try {
     echo "PDO: " . ($pdo ? "ok" : "null") . "\n";
-    $tables = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME LIKE '%permiss%'")->fetchAll(PDO::FETCH_COLUMN);
+    $tables = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND (TABLE_NAME LIKE '%permiss%' OR TABLE_NAME LIKE '%role%')")->fetchAll(PDO::FETCH_COLUMN);
     echo "Tables: " . implode(', ', $tables) . "\n";
-    if (count($tables) > 0) {
-      $pdo->exec("INSERT IGNORE INTO `$tables[0]` (rid, permission) VALUES ('anonymous', 'access content')");
-      $pdo->exec("INSERT IGNORE INTO `$tables[0]` (rid, permission) VALUES ('anonymous', 'view media')");
+    $permTable = '';
+    foreach ($tables as $t) {
+      $cols = $pdo->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '$t' AND (COLUMN_NAME = 'permission' OR COLUMN_NAME = 'rid')")->fetchAll(PDO::FETCH_COLUMN);
+      if (count($cols) >= 2) { $permTable = $t; break; }
+    }
+    echo "Perm table: $permTable\n";
+    if ($permTable) {
+      $pdo->exec("INSERT IGNORE INTO `$permTable` (rid, permission) VALUES ('anonymous', 'access content')");
+      $pdo->exec("INSERT IGNORE INTO `$permTable` (rid, permission) VALUES ('anonymous', 'view media')");
       echo "Inserted\n";
     }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
