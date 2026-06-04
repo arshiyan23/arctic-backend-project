@@ -57,32 +57,64 @@ if (isset($_GET['files'])) {
 }
 if (isset($_GET['cr'])) {
   header('Content-Type: text/plain');
-  $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
-  $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
-  $app_root = __DIR__ . '/web';
-  $autoloader = require $app_root . '/autoload.php';
-  $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
-  Drupal\Core\DrupalKernel::bootEnvironment($app_root);
-  $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
-  $k->boot();
-  echo "Booted Drupal ".Drupal::VERSION."\n";
-  if (isset($_GET['grant'])) {
-    $perms = ['access content', 'view media', 'restful get entity:node'];
-    $roleStorage = Drupal::entityTypeManager()->getStorage('user_role');
-    $roles = $roleStorage->loadMultiple();
-    foreach ($roles as $rid => $role) {
-      $granted = [];
-      foreach ($perms as $p) {
-        if (!$role->hasPermission($p)) {
-          $role->grantPermission($p)->save();
-          $granted[] = $p;
+  $simple = !isset($_GET['drupal']);
+  if (!$simple) {
+    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+    $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
+    $app_root = __DIR__ . '/web';
+    $autoloader = require $app_root . '/autoload.php';
+    $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
+    Drupal\Core\DrupalKernel::bootEnvironment($app_root);
+    $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
+    $k->boot();
+    echo "Booted Drupal ".Drupal::VERSION."\n";
+    if (isset($_GET['grant'])) {
+      $perms = ['access content', 'view media', 'restful get entity:node'];
+      $roleStorage = Drupal::entityTypeManager()->getStorage('user_role');
+      $roles = $roleStorage->loadMultiple();
+      foreach ($roles as $rid => $role) {
+        $granted = [];
+        foreach ($perms as $p) {
+          if (!$role->hasPermission($p)) {
+            $role->grantPermission($p)->save();
+            $granted[] = $p;
+          }
+        }
+        if (count($granted)) { echo "Granted '$rid': " . implode(', ', $granted) . "\n"; }
+      }
+      Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
+      echo "Caches cleared.\n";
+    }
+    return;
+  }
+  echo "=== Current permissions ===\n";
+  try {
+    $rc = $pdo->query("SELECT name, data FROM config WHERE name LIKE 'user.role.%' ORDER BY name")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rc as $r) {
+      $data = unserialize($r['data']);
+      echo "{$r['name']}:\n";
+      if (isset($data['permissions'])) {
+        echo "  perms: " . count($data['permissions']) . " total\n";
+        echo "  access content: " . (in_array('access content', $data['permissions']) ? 'YES' : 'NO') . "\n";
+        echo "  view media: " . (in_array('view media', $data['permissions']) ? 'YES' : 'NO') . "\n";
+        if (isset($_GET['grant'])) {
+          $changed = false;
+          foreach (['access content', 'view media', 'restful get entity:node'] as $p) {
+            if (!in_array($p, $data['permissions'])) {
+              $data['permissions'][] = $p;
+              $changed = true;
+              echo "  -> granting: $p\n";
+            }
+          }
+          if ($changed) {
+            $stmt = $pdo->prepare("UPDATE config SET data = ? WHERE name = ?");
+            $stmt->execute([serialize($data), $r['name']]);
+            echo "  => saved\n";
+          }
         }
       }
-      if (count($granted)) { echo "Granted '$rid': " . implode(', ', $granted) . "\n"; }
     }
-    Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
-    echo "Caches cleared.\n";
-  }
+  } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
 
