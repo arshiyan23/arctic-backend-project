@@ -58,17 +58,9 @@ if (isset($_GET['files'])) {
 if (isset($_GET['cr'])) {
   header('Content-Type: text/plain');
   try {
-    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
-    $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
-    $app_root = __DIR__ . '/web';
-    $autoloader = require $app_root . '/autoload.php';
-    $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
-    Drupal\Core\DrupalKernel::bootEnvironment($app_root);
-    $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
-    $k->boot();
-    echo "Booted ".Drupal::VERSION."\n";
-    Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
-    echo "Rebuilt\n";
+    $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
+    echo "Users:\n";
+    foreach ($users as $u) { echo "  {$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
