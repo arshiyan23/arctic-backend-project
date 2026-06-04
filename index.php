@@ -75,34 +75,21 @@ if (isset($_GET['cr'])) {
 
 if (isset($_GET['fixperms'])) {
   header('Content-Type: text/plain');
-  $rid = 'anonymous';
-  $needed = ['access content', 'view media'];
-  $existing = $pdo->prepare("SELECT permission FROM role_permission WHERE rid = ?");
-  $existing->execute([$rid]);
-  $have = $existing->fetchAll(PDO::FETCH_COLUMN);
-  $add = array_diff($needed, $have);
-  $ins = $pdo->prepare("INSERT IGNORE INTO role_permission (rid, permission) VALUES (?, ?)");
-  foreach ($add as $p) { $ins->execute([$rid, $p]); }
-  echo "Granted: " . implode(', ', $add) . "\n";
-  return;
-}
-if (isset($_GET['fixperms'])) {
-  header('Content-Type: text/plain');
   try {
-    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
-    $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
-    $app_root = __DIR__ . '/web';
-    $autoloader = require $app_root . '/autoload.php';
-    $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
-    Drupal\Core\DrupalKernel::bootEnvironment($app_root);
-    $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
-    $k->boot();
-    $k->preHandle($r);
-    $role = \Drupal\user\Entity\Role::load('anonymous');
-    $role->grantPermission('access content');
-    $role->grantPermission('view media');
-    $role->save();
-    echo "Permissions granted";
+    $tables = $pdo->query("SHOW TABLES LIKE '%role%perm%'")->fetchAll(PDO::FETCH_COLUMN);
+    echo "Tables found: " . implode(', ', $tables) . "\n";
+    if (count($tables) > 0) {
+      $table = $tables[0];
+      $existing = $pdo->prepare("SELECT permission FROM `$table` WHERE rid = ?");
+      $existing->execute(['anonymous']);
+      $have = $existing->fetchAll(PDO::FETCH_COLUMN);
+      echo "Current permissions: " . implode(', ', $have) . "\n";
+      $needed = ['access content', 'view media'];
+      $add = array_diff($needed, $have);
+      $ins = $pdo->prepare("INSERT IGNORE INTO `$table` (rid, permission) VALUES (?, ?)");
+      foreach ($add as $p) { $ins->execute(['anonymous', $p]); }
+      echo "Granted: " . implode(', ', $add) . "\n";
+    }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
