@@ -919,6 +919,7 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
   }
   $settings['trusted_host_patterns'] = [
     '^artic-backend\.azurewebsites\.net$',
+    '^be-artic-arsh-.*\.azurewebsites\.net$',
     '^localhost$',
   ];
   $settings['reverse_proxy'] = TRUE;
