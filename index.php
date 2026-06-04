@@ -73,13 +73,22 @@ if (isset($_GET['cr'])) {
   return;
 }
 if (isset($_GET['fixperms'])) {
-  chdir(__DIR__.'/web');
-  require __DIR__.'/web/index.php';
-  $role = \Drupal\user\Entity\Role::load('anonymous');
-  $role->grantPermission('access content');
-  $role->grantPermission('view media');
-  $role->save();
-  echo "Permissions granted";
+  header('Content-Type: text/plain');
+  try {
+    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+    $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
+    $app_root = __DIR__ . '/web';
+    $autoloader = require $app_root . '/autoload.php';
+    $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
+    Drupal\Core\DrupalKernel::bootEnvironment($app_root);
+    $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
+    $k->boot();
+    $role = \Drupal\user\Entity\Role::load('anonymous');
+    $role->grantPermission('access content');
+    $role->grantPermission('view media');
+    $role->save();
+    echo "Permissions granted";
+  } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
 chdir(__DIR__.'/web');
