@@ -80,5 +80,14 @@ if (isset($_GET['cr'])) {
 
 $_SERVER['PHP_AUTH_USER'] = 'apiadminG3h7R';
 $_SERVER['PHP_AUTH_PW'] = 'P#2s6Lj@9E!q';
+
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '';
+$prefix = '/index.php';
+if (str_starts_with($requestPath, $prefix . '/')) {
+  $pathInfo = substr($requestPath, strlen($prefix));
+  $_SERVER['PATH_INFO'] = $pathInfo;
+  $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
+}
+
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
