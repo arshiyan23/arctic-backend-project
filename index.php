@@ -72,5 +72,15 @@ if (isset($_GET['cr'])) {
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
+if (isset($_GET['fixperms'])) {
+  chdir(__DIR__.'/web');
+  require __DIR__.'/web/index.php';
+  $role = \Drupal\user\Entity\Role::load('anonymous');
+  $role->grantPermission('access content');
+  $role->grantPermission('view media');
+  $role->save();
+  echo "Permissions granted";
+  return;
+}
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
