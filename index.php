@@ -75,13 +75,10 @@ if (isset($_GET['cr'])) {
     $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
     echo "\nUsers:\n";
     foreach ($users as $u) { echo "  uid={$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
-    echo "\nRoles:\n";
-    $roles = $pdo->query("SELECT rid, label FROM role ORDER BY rid")->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($roles as $r) { echo "  {$r['rid']}: {$r['label']}\n"; }
     echo "\nuid=5 (apiadminG3h7R) roles:\n";
     $ur = $pdo->query("SELECT roles_target_id FROM user__roles WHERE entity_id = 5")->fetchAll(PDO::FETCH_COLUMN);
     foreach ($ur as $r) { echo "  role: $r\n"; }
-    echo "\nRole config (permissions from config table):\n";
+    echo "\nRole permissions from config table:\n";
     $roles_cfg = $pdo->query("SELECT name, SUBSTRING(data, 1, 1000) FROM config WHERE name LIKE 'user.role.%' ORDER BY name")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($roles_cfg as $c) {
       $name = $c['name'];
