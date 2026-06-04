@@ -76,21 +76,16 @@ if (isset($_GET['cr'])) {
 if (isset($_GET['fixperms'])) {
   header('Content-Type: text/plain');
   try {
-    echo "DB: " . $db_name . "\n";
-    $allTables = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE()")->fetchAll(PDO::FETCH_COLUMN);
-    echo "All (" . count($allTables) . "): " . implode(', ', array_slice($allTables, 0, 30)) . "\n";
-    $permTable = '';
-    foreach ($allTables as $t) {
-      $cols = $pdo->query("SELECT COLUMN_NAME FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = '$t'")->fetchAll(PDO::FETCH_COLUMN);
-      if (in_array('rid', $cols) && in_array('permission', $cols)) { $permTable = $t; break; }
-    }
-    echo "Perm table: $permTable\n";
-    if ($permTable) {
-      $pdo->exec("INSERT IGNORE INTO `$permTable` (rid, permission) VALUES ('anonymous', 'access content')");
-      $pdo->exec("INSERT IGNORE INTO `$permTable` (rid, permission) VALUES ('anonymous', 'view media')");
-      echo "Inserted\n";
-      $check = $pdo->query("SELECT COUNT(*) FROM `$permTable` WHERE rid='anonymous'")->fetchColumn();
-      echo "Anonymous permissions count: $check\n";
+    $roleLike = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME LIKE '%role%'")->fetchAll(PDO::FETCH_COLUMN);
+    echo "Role-like: " . implode(', ', $roleLike) . "\n";
+    $permLike = $pdo->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME LIKE '%permiss%'")->fetchAll(PDO::FETCH_COLUMN);
+    echo "Perm-like: " . implode(', ', $permLike) . "\n";
+    if (count($permLike) > 0) {
+      $pdo->exec("INSERT IGNORE INTO `$permLike[0]` (rid, permission) VALUES ('anonymous', 'access content')");
+      $pdo->exec("INSERT IGNORE INTO `$permLike[0]` (rid, permission) VALUES ('anonymous', 'view media')");
+      echo "Inserted into $permLike[0]\n";
+    } else {
+      echo "No permission table found\n";
     }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
