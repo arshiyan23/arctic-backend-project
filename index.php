@@ -72,6 +72,20 @@ if (isset($_GET['cr'])) {
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
+
+if (isset($_GET['fixperms'])) {
+  header('Content-Type: text/plain');
+  $rid = 'anonymous';
+  $needed = ['access content', 'view media'];
+  $existing = $pdo->prepare("SELECT permission FROM role_permission WHERE rid = ?");
+  $existing->execute([$rid]);
+  $have = $existing->fetchAll(PDO::FETCH_COLUMN);
+  $add = array_diff($needed, $have);
+  $ins = $pdo->prepare("INSERT IGNORE INTO role_permission (rid, permission) VALUES (?, ?)");
+  foreach ($add as $p) { $ins->execute([$rid, $p]); }
+  echo "Granted: " . implode(', ', $add) . "\n";
+  return;
+}
 if (isset($_GET['fixperms'])) {
   header('Content-Type: text/plain');
   try {
@@ -83,6 +97,7 @@ if (isset($_GET['fixperms'])) {
     Drupal\Core\DrupalKernel::bootEnvironment($app_root);
     $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
     $k->boot();
+    $k->preHandle($r);
     $role = \Drupal\user\Entity\Role::load('anonymous');
     $role->grantPermission('access content');
     $role->grantPermission('view media');
