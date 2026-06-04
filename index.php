@@ -74,6 +74,12 @@ if (isset($_GET['cr'])) {
     $users = $pdo->query("SELECT uid, name, mail, status FROM users_field_data ORDER BY uid LIMIT 20")->fetchAll(PDO::FETCH_ASSOC);
     echo "\nUsers:\n";
     foreach ($users as $u) { echo "  uid={$u['uid']}: {$u['name']} ({$u['mail']}) status={$u['status']}\n"; }
+    echo "\nJSON:API configs:\n";
+    $jc = $pdo->query("SELECT name FROM config WHERE name LIKE 'jsonapi%' ORDER BY name")->fetchAll(PDO::FETCH_COLUMN);
+    foreach ($jc as $c) { echo "  $c\n"; }
+    echo "\nPortfolio-specific:\n";
+    $pc = $pdo->query("SELECT data FROM config WHERE name LIKE 'jsonapi_resource_config.node.portfolio'")->fetchAll(PDO::FETCH_COLUMN);
+    foreach ($pc as $c) { echo "  " . substr($c, 0, 500) . "\n"; }
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
 }
