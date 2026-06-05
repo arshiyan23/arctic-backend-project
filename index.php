@@ -68,6 +68,10 @@ if (isset($_GET['cr'])) {
     $k->boot();
     echo "Booted ".Drupal::VERSION."\n";
     Drupal::service('cache_tags.invalidator')->invalidateTags(['*']);
+    try {
+      $pdo->exec('TRUNCATE TABLE cache_page');
+      echo "Cleared cache_page\n";
+    } catch (Throwable $e2) { echo "cache_page: ".$e2->getMessage()."\n"; }
     echo "Rebuilt\n";
   } catch (Throwable $e) { echo "Error: ".$e->getMessage()."\n"; }
   return;
