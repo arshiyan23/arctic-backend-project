@@ -151,8 +151,9 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_SERVER['QUERY_STRING'] = $cleanQs;
   $_SERVER['REQUEST_URI'] = $pathInfo . ($cleanQs ? '?' . $cleanQs : '');
   $_GET = $params;
-  header('X-Debug-Q: strip; uri=' . $_SERVER['REQUEST_URI']);
+  error_log('Q_HANDLER: q=' . ($_GET['q'] ?? 'NOTSET') . '; REQUEST_URI=' . ($_SERVER['REQUEST_URI'] ?? 'NOTSET') . '; QS=' . ($_SERVER['QUERY_STRING'] ?? 'NOTSET'));
 }
 
+header('X-Debug-End: reached; method=' . ($_SERVER['REQUEST_METHOD'] ?? '?') . '; path=' . ($_SERVER['REQUEST_URI'] ?? '?'));
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
