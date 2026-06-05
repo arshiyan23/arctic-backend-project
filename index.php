@@ -61,7 +61,7 @@ if (isset($_GET['cr'])) {
     $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
     $_SERVER['SCRIPT_FILENAME'] = __DIR__.'/web/index.php';
     $app_root = __DIR__ . '/web';
-    $autoloader = require $app_root . '/autoloader.php';
+    $autoloader = require $app_root . '/autoload.php';
     $r = Symfony\Component\HttpFoundation\Request::createFromGlobals();
     Drupal\Core\DrupalKernel::bootEnvironment($app_root);
     $k = Drupal\Core\DrupalKernel::createFromRequest($r, $autoloader, 'prod', true, $app_root);
