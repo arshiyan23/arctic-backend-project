@@ -935,5 +935,6 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
     'maxAge' => 86400,
     'supportsCredentials' => FALSE,
   ];
+  $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
   $config['jsonapi_extras.jsonapi_resource_config.node--portfolio']['resourceFields']['created']['disabled'] = FALSE;
 }
