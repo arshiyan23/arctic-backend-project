@@ -129,10 +129,28 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
   $_SERVER['REQUEST_URI'] = $pathInfo . (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
 } elseif (!empty($_GET['q'])) {
-  $pathInfo = '/' . ltrim($_GET['q'], '/');
+  $qPath = ltrim($_GET['q'], '/');
+  $qmarkPos = strpos($qPath, '?');
+  $extraQs = '';
+  if ($qmarkPos !== false) {
+    $extraQs = substr($qPath, $qmarkPos + 1);
+    $qPath = substr($qPath, 0, $qmarkPos);
+  }
+  $params = [];
+  parse_str($_SERVER['QUERY_STRING'] ?? '', $params);
+  if ($extraQs) {
+    $extra = [];
+    parse_str($extraQs, $extra);
+    $params = array_merge($params, $extra);
+  }
+  unset($params['q']);
+  $pathInfo = '/' . $qPath;
+  $cleanQs = http_build_query($params);
   $_SERVER['PATH_INFO'] = $pathInfo;
   $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
-  $_SERVER['REQUEST_URI'] = $pathInfo . (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
+  $_SERVER['QUERY_STRING'] = $cleanQs;
+  $_SERVER['REQUEST_URI'] = $pathInfo . ($cleanQs ? '?' . $cleanQs : '');
+  $_GET = $params;
 }
 
 chdir(__DIR__.'/web');
