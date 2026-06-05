@@ -151,6 +151,7 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_SERVER['QUERY_STRING'] = $cleanQs;
   $_SERVER['REQUEST_URI'] = $pathInfo . ($cleanQs ? '?' . $cleanQs : '');
   $_GET = $params;
+  header('X-Debug-Q: strip; uri=' . $_SERVER['REQUEST_URI']);
 }
 
 chdir(__DIR__.'/web');
