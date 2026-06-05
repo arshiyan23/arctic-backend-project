@@ -151,7 +151,19 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_SERVER['QUERY_STRING'] = $cleanQs;
   $_SERVER['REQUEST_URI'] = $pathInfo . ($cleanQs ? '?' . $cleanQs : '');
   $_GET = $params;
-  error_log('Q_HANDLER: q=' . ($_GET['q'] ?? 'NOTSET') . '; REQUEST_URI=' . ($_SERVER['REQUEST_URI'] ?? 'NOTSET') . '; QS=' . ($_SERVER['QUERY_STRING'] ?? 'NOTSET'));
+}
+
+if (!empty($_GET['dq'])) {
+  header('Content-Type: text/plain');
+  echo "=== DEBUG DQ ===\n";
+  echo "ORIG QS: " . ($_SERVER['QUERY_STRING'] ?? 'NONE') . "\n";
+  echo "ORIG GET['q']: " . ($_GET['q'] ?? 'NONE') . "\n";
+  echo "GET: " . json_encode($_GET) . "\n";
+  echo "SERVER[REQUEST_URI]: " . ($_SERVER['REQUEST_URI'] ?? 'NONE') . "\n";
+  echo "SERVER[QUERY_STRING]: " . ($_SERVER['QUERY_STRING'] ?? 'NONE') . "\n";
+  echo "SERVER[PATH_INFO]: " . ($_SERVER['PATH_INFO'] ?? 'NONE') . "\n";
+  echo "SERVER[SCRIPT_NAME]: " . ($_SERVER['SCRIPT_NAME'] ?? 'NONE') . "\n";
+  return;
 }
 
 header('X-Debug-End: reached; method=' . ($_SERVER['REQUEST_METHOD'] ?? '?') . '; path=' . ($_SERVER['REQUEST_URI'] ?? '?'));
