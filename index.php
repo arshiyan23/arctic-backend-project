@@ -128,23 +128,22 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_SERVER['PATH_INFO'] = $pathInfo;
   $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
   $_SERVER['REQUEST_URI'] = $pathInfo . (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
-} elseif (!empty($_GET['q'])) {
-  $qPath = ltrim($_GET['q'], '/');
-  $qmarkPos = strpos($qPath, '?');
+} elseif (!empty($_GET['_path'])) {
+  $inlinePath = ltrim($_GET['_path'], '/');
+  $qmarkPos = strpos($inlinePath, '?');
   $extraQs = '';
   if ($qmarkPos !== false) {
-    $extraQs = substr($qPath, $qmarkPos + 1);
-    $qPath = substr($qPath, 0, $qmarkPos);
+    $extraQs = substr($inlinePath, $qmarkPos + 1);
+    $inlinePath = substr($inlinePath, 0, $qmarkPos);
   }
-  $params = [];
-  parse_str($_SERVER['QUERY_STRING'] ?? '', $params);
+  $params = $_GET;
+  unset($params['_path']);
   if ($extraQs) {
     $extra = [];
     parse_str($extraQs, $extra);
     $params = array_merge($params, $extra);
   }
-  unset($params['q']);
-  $pathInfo = '/' . $qPath;
+  $pathInfo = '/' . $inlinePath;
   $cleanQs = http_build_query($params);
   $_SERVER['PATH_INFO'] = $pathInfo;
   $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
@@ -153,19 +152,5 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $_GET = $params;
 }
 
-if (!empty($_GET['dq'])) {
-  header('Content-Type: text/plain');
-  echo "=== DEBUG DQ ===\n";
-  echo "ORIG QS: " . ($_SERVER['QUERY_STRING'] ?? 'NONE') . "\n";
-  echo "ORIG GET['q']: " . ($_GET['q'] ?? 'NONE') . "\n";
-  echo "GET: " . json_encode($_GET) . "\n";
-  echo "SERVER[REQUEST_URI]: " . ($_SERVER['REQUEST_URI'] ?? 'NONE') . "\n";
-  echo "SERVER[QUERY_STRING]: " . ($_SERVER['QUERY_STRING'] ?? 'NONE') . "\n";
-  echo "SERVER[PATH_INFO]: " . ($_SERVER['PATH_INFO'] ?? 'NONE') . "\n";
-  echo "SERVER[SCRIPT_NAME]: " . ($_SERVER['SCRIPT_NAME'] ?? 'NONE') . "\n";
-  return;
-}
-
-header('X-Debug-End: reached; method=' . ($_SERVER['REQUEST_METHOD'] ?? '?') . '; path=' . ($_SERVER['REQUEST_URI'] ?? '?'));
 chdir(__DIR__.'/web');
 require __DIR__.'/web/index.php';
