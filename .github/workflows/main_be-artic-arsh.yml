@@ -57,4 +57,4 @@ jobs:
           app-name: 'be-artic-arsh'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F7FB56EB5CD4D0897151B6C4BC0B900 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_51DC227B77CD4ABAB22A6C9352A3AA3D }}
