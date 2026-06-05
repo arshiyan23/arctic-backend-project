@@ -65,4 +65,6 @@ NGINXMAIN
 
 nginx -t 2>&1
 
-exit 0
+php-fpm -D 2>&1
+
+nginx 2>&1
