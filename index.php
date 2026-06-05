@@ -127,6 +127,12 @@ if (str_starts_with($requestPath, $prefix . '/')) {
   $pathInfo = substr($requestPath, strlen($prefix));
   $_SERVER['PATH_INFO'] = $pathInfo;
   $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
+  $_SERVER['REQUEST_URI'] = $pathInfo . (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
+} elseif (!empty($_GET['q'])) {
+  $pathInfo = '/' . ltrim($_GET['q'], '/');
+  $_SERVER['PATH_INFO'] = $pathInfo;
+  $_SERVER['ORIG_PATH_INFO'] = $pathInfo;
+  $_SERVER['REQUEST_URI'] = $pathInfo . (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] ? '?' . $_SERVER['QUERY_STRING'] : '');
 }
 
 chdir(__DIR__.'/web');
