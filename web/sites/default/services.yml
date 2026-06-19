@@ -3,7 +3,7 @@ parameters:
     enabled: true
     allowedHeaders: ['authorization', 'content-type', 'accept', 'origin', 'x-requested-with']
     allowedMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS']
-    allowedOrigins: ['https://mango-glacier-02c132300.7.azurestaticapps.net', 'http://localhost:3001', 'http://localhost:3000']
+    allowedOrigins: ['https://artic.com.qa', 'https://www.artic.com.qa', 'https://mango-glacier-02c132300.7.azurestaticapps.net', 'http://localhost:3001', 'http://localhost:3000']
     allowedOriginsPatterns: []
     exposedHeaders: false
     maxAge: 86400
