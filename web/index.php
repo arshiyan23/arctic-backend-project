@@ -3,9 +3,17 @@
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 
-$corsOrigin = 'https://mango-glacier-02c132300.7.azurestaticapps.net';
-if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] === $corsOrigin) {
+$allowedCorsOrigins = [
+  'https://artic.com.qa',
+  'https://www.artic.com.qa',
+  'https://mango-glacier-02c132300.7.azurestaticapps.net',
+  'http://localhost:3001',
+  'http://localhost:3000',
+];
+$corsOrigin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($corsOrigin, $allowedCorsOrigins, TRUE)) {
   header('Access-Control-Allow-Origin: ' . $corsOrigin);
+  header('Vary: Origin', FALSE);
   header('Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS');
   header('Access-Control-Allow-Headers: authorization, content-type, accept, origin, x-requested-with');
   header('Access-Control-Max-Age: 86400');
