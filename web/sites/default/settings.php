@@ -925,6 +925,7 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = [$_SERVER['REMOTE_ADDR']];
   $settings['config_sync_directory'] = '../config/sync';
+  $settings['deployment_identifier'] = '20260619-1';
   $settings['cors.config'] = [
     'enabled' => TRUE,
     'allowedHeaders' => ['authorization', 'content-type', 'accept', 'origin', 'x-requested-with'],
