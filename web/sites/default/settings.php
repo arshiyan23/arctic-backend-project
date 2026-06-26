@@ -919,7 +919,7 @@ if (getenv('IS_DDEV_PROJECT') != 'true') {
     $settings['hash_salt'] = $hash_salt;
   }
   $settings['trusted_host_patterns'] = [
-    '^be-artic-arsh\.azurewebsites\.net$',
+    '^artic-backend-prod\.azurewebsites\.net$',
     '^localhost$',
   ];
   $settings['reverse_proxy'] = TRUE;
