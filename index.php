@@ -2,7 +2,7 @@
 $allowedCorsOrigins = [
   'https://artic.com.qa',
   'https://www.artic.com.qa',
-  'https://mango-glacier-02c132300.7.azurestaticapps.net',
+  'https://lemon-desert-02d2c7a00.7.azurestaticapps.net',
   'http://localhost:3001',
   'http://localhost:3000',
 ];
