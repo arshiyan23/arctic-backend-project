@@ -3,25 +3,6 @@
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 
-$allowedCorsOrigins = [
-  'https://artic.com.qa',
-  'https://www.artic.com.qa',
-  'https://lemon-desert-02d2c7a00.7.azurestaticapps.net',
-  'http://localhost:3001',
-  'http://localhost:3000',
-];
-$corsOrigin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (in_array($corsOrigin, $allowedCorsOrigins, TRUE)) {
-  header('Access-Control-Allow-Origin: ' . $corsOrigin);
-  header('Vary: Origin', FALSE);
-  header('Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS');
-  header('Access-Control-Allow-Headers: authorization, content-type, accept, origin, x-requested-with');
-  header('Access-Control-Max-Age: 86400');
-  if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(204);
-    return;
-  }
-}
 
 $autoloader = require_once 'autoload.php';
 

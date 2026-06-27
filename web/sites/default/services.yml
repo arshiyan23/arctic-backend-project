@@ -1,10 +1,3 @@
 parameters:
   cors.config:
-    enabled: true
-    allowedHeaders: ['authorization', 'content-type', 'accept', 'origin', 'x-requested-with']
-    allowedMethods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS']
-    allowedOrigins: ['https://artic.com.qa', 'https://www.artic.com.qa', 'https://lemon-desert-02d2c7a00.7.azurestaticapps.net', 'http://localhost:3001', 'http://localhost:3000']
-    allowedOriginsPatterns: []
-    exposedHeaders: false
-    maxAge: 86400
-    supportsCredentials: false
+    enabled: false
